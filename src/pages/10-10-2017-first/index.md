@@ -1,5 +1,5 @@
 ---
-path: '/first-post'
+path: '/projects/first-post'
 title: 'First Blog Post'
 ---
 
