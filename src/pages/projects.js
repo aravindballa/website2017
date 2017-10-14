@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
-const Projects = ({data}) => (
+const Projects = ({ data }) => (
   <div>
     <h1>Projects</h1>
     <p>Welcome to your new Gatsby site.</p>

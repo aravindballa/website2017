@@ -1,7 +1,7 @@
 const path = require('path');
 
-exports.createPages = ({boundActionCreators, graphql}) => {
-  const {createPage} = boundActionCreators;
+exports.createPages = ({ boundActionCreators, graphql }) => {
+  const { createPage } = boundActionCreators;
 
   const postTemplate = path.resolve('src/templates/post.js');
 
@@ -19,16 +19,16 @@ exports.createPages = ({boundActionCreators, graphql}) => {
       }
     }
   }`)
-  .then(res => {
-    if(res.errors) {
-      return Promise.reject(res.errors);
-    }
+    .then(res => {
+      if (res.errors) {
+        return Promise.reject(res.errors);
+      }
 
-    res.data.allMarkdownRemark.edges.forEach(({node}) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: postTemplate
+      res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: node.frontmatter.path,
+          component: postTemplate
+        })
       })
     })
-  })
 }

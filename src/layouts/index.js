@@ -5,10 +5,10 @@ import Helmet from 'react-helmet'
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
-import './index.scss'
+import './index.scss';
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -20,15 +20,15 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <div>
-    <MuiThemeProvider>
-      <div>
-        <Nav />
-        <div className="container"> 
-          {children()}
+      <MuiThemeProvider>
+        <div>
+          <Nav />
+          <div className="container">
+            {children()}
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </MuiThemeProvider>
+      </MuiThemeProvider>
     </div>
   </div>
 )
