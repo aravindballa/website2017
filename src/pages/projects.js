@@ -8,11 +8,14 @@ const Projects = ({ data }) => (
     <p>Now go build something great.</p>
 
     {data.allMarkdownRemark.edges.map(post => (
-      <Link
-        key={post.node.id}
-        to={post.node.frontmatter.path}>
-        {post.node.frontmatter.title}
-      </Link>
+      <div>
+        <Link
+          key={post.node.id}
+          to={post.node.frontmatter.path}>
+          {post.node.frontmatter.title}
+        </Link>
+        <br />
+      </div>
     ))}
   </div>
 )

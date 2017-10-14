@@ -1,14 +1,15 @@
 import React from 'react';
-import {blueGrey100} from 'material-ui/styles/colors';
+import { blueGrey100 } from 'material-ui/styles/colors';
 
 const styles = {
-  foo:{
+  foo: {
     paddingTop: 20,
     paddingBottom: 20,
     fontFamily: 'Roboto',
     fontWeight: 200,
     textAlign: 'center',
-    background: blueGrey100
+    background: blueGrey100,
+    marginTop: 40
   }
 };
 

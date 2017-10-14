@@ -4,15 +4,6 @@
         "prettier",
         "prettier/react"
     ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-        "ecmaVersion": 8,
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "impliedStrict": true,
-            "classes": true,
-        }
-    },
     "env": {
         "browser": true,
         "node": true,

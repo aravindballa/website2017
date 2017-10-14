@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import Avatar from 'material-ui/Avatar';
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 const IndexPage = () => (
   <div>
@@ -26,8 +28,40 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
+    <section className="section-wrap">
+      <h3>Latest Projects</h3>
+      <Card className="project-card">
+        <CardHeader
+          title="Title"
+          subtitle="Subtitle"
+        />
+        <CardText>
+          Project Description
+        </CardText>
+        <CardActions>
+          <FlatButton label="Like" />
+          <FlatButton label="Github" />
+        </CardActions>
+      </Card>
+      <Link to="/projects/" className="see-all">All projects &gt;</Link>
+    </section>
+    <section className="section-wrap">
+      <h3>Latest Writings</h3>
+      <Card className="project-card">
+        <CardHeader
+          title="Article"
+          subtitle="Subtitle"
+        />
+        <CardText>
+          Description
+        </CardText>
+        <CardActions>
+          <FlatButton label="Read More" />
+        </CardActions>
+      </Card>
+      <a href="http://medium.com/@aravindballa/" className="see-all">All writings &gt;</a>
+    </section>
 
-    <Link to="/page-2/">Go to page 2</Link>
   </div>
 )
 

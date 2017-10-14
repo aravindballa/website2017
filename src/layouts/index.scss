@@ -1,5 +1,5 @@
 html {
-  font-family: sans-serif;
+  font-family: Roboto, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -198,7 +198,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Helvetica, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -659,7 +659,6 @@ pre tt:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Roboto;
   color: #222;
 
   .title {
@@ -673,5 +672,25 @@ pre tt:after {
     margin-top: 50;
     max-width: 600;
     padding: 10;
+  }
+}
+
+.project-card {
+  max-width: 350px;
+}
+
+.section-wrap{
+  margin-top: 30px;
+
+  .see-all {
+    color: lightgray;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 0.8em;
+    float: right;
+
+    &:hover {
+      color: darkgray;
+    }
   }
 }
