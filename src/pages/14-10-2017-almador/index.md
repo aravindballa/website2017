@@ -1,6 +1,10 @@
 ---
 path: '/projects/almador'
 title: 'Almador'
+technologies: 'Node, api.ai'
+source: 'https://github.com/aravindballa/almador'
+link: ''
+desc: 'A personal facebook messenger bot which logs my work, inspires me, and sends messages on my behalf. It doesnot hesitate in answering simple and funny questions too.'
 ---
 
 This is my personal assistant. Period. It is a Facebook Messenger Bot.

@@ -699,4 +699,52 @@ pre tt:after {
 
 .projects-wrap {
   margin-top: 30px;
+  .proj {
+    h2 {
+      margin-bottom: 5px;
+    }
+    a {
+      color: hsla(0, 0%, 0%, 0.6);
+      text-decoration: underline;
+      text-decoration-color: hsla(0, 0%, 0%, 0.4);
+      &:hover {
+        color: hsla(0, 0%, 0%, 0.8);
+        text-decoration: underline;
+        text-decoration-color: #FF822E;
+      }
+    }
+    p {
+      margin-top: 10px;
+    }
+    .actions {
+      margin-top: -20px;
+      float: right;
+    }
+
+    hr {
+      margin: 50px auto !important;
+      max-width: 100px;
+    }
+  }
+}
+
+.chip {
+  display: inline-flex;
+  margin-left: -5px;
+  margin-top: 5px;
+}
+
+.post {
+  margin-top: 120px;
+  padding: 50px;
+  h1 {
+    margin-bottom: 10px;
+  }
+  .post-content {
+    margin-top: 30px;
+  }
+  a {
+    color: hsla(0, 0%, 0%, 0.8);
+    text-decoration-color: #FF822E;
+  }
 }
