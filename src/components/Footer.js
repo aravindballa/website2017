@@ -14,6 +14,7 @@ const styles = {
   },
   links: {
     marginRight: 15,
+    cursor: 'pointer'
   }
 };
 

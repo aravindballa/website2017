@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppBar, FlatButton} from 'material-ui';
+import { AppBar, FlatButton } from 'material-ui';
 import Link from 'gatsby-link';
 
 const styles = {
@@ -13,7 +13,7 @@ const styles = {
 };
 
 function handleWritingsClick() {
-  window.open('https://medium.com/@aravindballa','_blank');
+  window.open('https://medium.com/@aravindballa', '_blank');
 };
 
 function handleProjectsClick() {
@@ -23,7 +23,7 @@ function handleProjectsClick() {
 const rightMenuItems = (
   <div>
     <Link to='/projects/'><FlatButton style={styles.rightMenu} label="Projects" /></Link>
-    <FlatButton style={styles.rightMenu} label="Writings" onClick={handleWritingsClick}/>
+    <FlatButton style={styles.rightMenu} label="Writings" onClick={handleWritingsClick} />
   </div>
 );
 
