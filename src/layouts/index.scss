@@ -676,16 +676,22 @@ pre tt:after {
 }
 
 .project-card {
-  max-width: 350px;
+  max-width: 300px;
+}
+
+.index-projects {
+  display: flex;
+  justify-content: space-around;
 }
 
 .section-wrap{
-  margin-top: 30px;
+  margin: 50px 0;
 
   .see-all {
+    margin-top: 10px;
     display: inline-flex;
     vertical-align: middle;
-    color: lightgray;
+    color: gray;
     text-decoration: none;
     font-weight: 200;
     font-size: 0.8em;

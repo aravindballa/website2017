@@ -55,8 +55,8 @@ const social_links = [
 
 const Footer = () => (
   <footer style={styles.foo}>
-    {social_links.map((link) =>
-      <a href={link.url} target="_blank"><img src={link.location} alt={link.title} height="30px" style={styles.links} /></a>
+    {social_links.map((link, id) =>
+      <a href={link.url} target="_blank" key={id}><img src={link.location} alt={link.title} height="30px" style={styles.links} /></a>
     )}
     <p>
       &copy; Aravind Balla. {currentYear}.

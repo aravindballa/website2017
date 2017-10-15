@@ -4,8 +4,9 @@ import Avatar from 'material-ui/Avatar';
 import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
+import { blueGrey500 } from 'material-ui/styles/colors';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <div>
     <div className="toprect"></div>
     <div className="row">
@@ -29,45 +30,95 @@ const IndexPage = () => (
         </div>
       </div>
     </div>
-    <section className="section-wrap">
+    <div className="section-wrap">
       <h3>Latest Projects</h3>
-      <div>
-        <Card className="project-card">
-          <CardHeader
-            title="Title"
-            subtitle="Subtitle"
-          />
-          <CardText>
-            Project Description
+      <div className="index-projects">
+        {data.allMarkdownRemark.edges.map(post => (
+          <Card className="project-card" key={post.node.id}>
+            <CardHeader
+              title={post.node.frontmatter.title}
+              subtitle={post.node.frontmatter.technologies}
+            />
+            <CardText>
+              {post.node.frontmatter.desc}
             </CardText>
-          <CardActions>
-            <FlatButton label="Like" />
-            <FlatButton label="Github" />
-          </CardActions>
-        </Card>
-        <br />
+            <CardActions>
+              <Link to={post.node.frontmatter.path}>
+                <FlatButton
+                  label="Read More"
+                  primary={true}
+                  fullWidth={true}
+                />
+              </Link>
+            </CardActions>
+          </Card>
+        ))}
       </div>
 
       <Link to="/projects/" className="see-all">All projects <KeyboardArrowRight color="lightgray" /></Link>
-    </section>
-    <section className="section-wrap">
+    </div>
+    <div className="section-wrap">
       <h3>Latest Writings</h3>
-      <Card className="project-card">
-        <CardHeader
-          title="Article"
-          subtitle="Subtitle"
-        />
-        <CardText>
-          Description
-        </CardText>
-        <CardActions>
-          <FlatButton label="Read More" />
-        </CardActions>
-      </Card>
-      <a href="http://medium.com/@aravindballa/" className="see-all">All writings <KeyboardArrowRight color="lightgray" /></a>
-    </section>
+      <div className="index-projects">
+        {data.allMediumPost.edges.map(post => (
+          <Card className="project-card" key={post.node.id}>
+            <CardHeader
+              title={post.node.title}
+            />
+            <CardText>
+              {post.node.virtuals.subtitle}
+            </CardText>
+            <CardActions>
+              <a href={"https://medium.com/code-lore/" + post.node.uniqueSlug}>
+                <FlatButton
+                  label="Read More"
+                  primary={true}
+                  fullWidth={true}
+                />
+              </a>
+            </CardActions>
+          </Card>
+        ))}
+      </div>
+      <a href="https://medium.com/@aravindballa/latest" className="see-all">All writings <KeyboardArrowRight color="lightgray" /></a>
+    </div>
 
   </div>
 )
+
+export const pageIndexQuery = graphql`
+query ProjectsPostsIndexQuery {
+  allMediumPost(sort: { fields: [createdAt], order: DESC }, limit: 3) {
+    edges {
+      node {
+        id
+        title
+        uniqueSlug
+        virtuals {
+          subtitle
+        }
+        author {
+          name
+        }
+      }
+    }
+  }
+  allMarkdownRemark(limit: 3) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          path
+          technologies
+          source
+          link
+          desc
+        }
+      }
+    }
+  }
+}
+`
 
 export default IndexPage

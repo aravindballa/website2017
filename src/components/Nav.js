@@ -13,7 +13,7 @@ const styles = {
 };
 
 function handleWritingsClick() {
-  window.open('https://medium.com/@aravindballa', '_blank');
+  window.open('https://medium.com/@aravindballa/latest', '_blank');
 };
 
 function handleProjectsClick() {
