@@ -12,6 +12,13 @@ module.exports = {
         name: 'pages',
       }
     },
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-medium`,
+      options: {
+        username: `code-lore`
+      }
+    }
   ],
+  pathPrefix: '/'
 }
