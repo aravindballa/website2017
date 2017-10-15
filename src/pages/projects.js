@@ -2,10 +2,9 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 const Projects = ({ data }) => (
-  <div>
+  <div className="projects-wrap">
     <h1>Projects</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <p>I love building things. </p>
 
     {data.allMarkdownRemark.edges.map(post => (
       <div>
