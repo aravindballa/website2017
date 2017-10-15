@@ -27,8 +27,9 @@ const rightMenuItems = (
   </div>
 );
 
-const Nav = () => (
+const Nav = ({ pathToPage }) => (
   <AppBar
+    title={<Link to="/"><img src="/img/logo-white.png" alt="" height="40px" style={{ margin: 10 }} /></Link>}
     style={styles.appBar}
     zDepth={0}
     iconElementRight={rightMenuItems}
