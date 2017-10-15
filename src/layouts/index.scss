@@ -747,4 +747,13 @@ pre tt:after {
     color: hsla(0, 0%, 0%, 0.8);
     text-decoration-color: #FF822E;
   }
+  .actions {
+    .btn {
+      margin-right: 15px;
+    }
+  }
+  img {
+    margin: 0 auto;
+    display: block;
+  }
 }
