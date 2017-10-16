@@ -2,7 +2,7 @@
 
 # aravindballa.com
 
-![AB](https://image.ibb.co/ij7FrR/logo.png)
+![AB](https://i.imgur.com/nUqfNwX.png)
 
 This is generated using [Gatsby JS](https://www.gatsbyjs.org), a static-site generator for react.
 
