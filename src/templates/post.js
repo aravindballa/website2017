@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Paper from 'material-ui/Paper'
 import Chip from 'material-ui/Chip'
-import RaisedButton from 'material-ui/RaisedButton'
+import RaisedButton from 'material-ui/RaisedButton';
 
 const handleClick = url => {
   window.open(url)
@@ -48,8 +48,8 @@ export default function Template({ data }) {
               onClick={() => handleClick(post.frontmatter.source)}
             />
           ) : (
-            <span />
-          )}
+              <span />
+            )}
           {post.frontmatter.link ? (
             <RaisedButton
               label="Open"
@@ -57,8 +57,8 @@ export default function Template({ data }) {
               onClick={() => handleClick(post.frontmatter.link)}
             />
           ) : (
-            <span />
-          )}
+              <span />
+            )}
         </div>
       </Paper>
     </div>
