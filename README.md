@@ -1,9 +1,14 @@
+[![Build Status](https://travis-ci.org/aravindballa/website2017.svg?branch=master)](https://travis-ci.org/aravindballa/website2017)
+
 # Website
 
-// Todo: setup
+- Clone the repo
+- Run `npm install`
+- Run `gatsby develop`
+
 
 ## Deploy
 
-// Todo: deploy
+- Run `gatsby build`
 
 
