@@ -10,7 +10,6 @@ before_script:
   - npm install -g gatsby-cli
 # script needed to test, because defaults don't work on osx
 script:
-  - npm install
   - npm run format
   - gatsby build
 
