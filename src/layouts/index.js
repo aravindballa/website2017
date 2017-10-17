@@ -22,8 +22,29 @@ const TemplateWrapper = ({ children }) => (
         {
           name: 'keywords',
           content:
-            'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
+          'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
         },
+        {
+          name: 'og:title',
+          content:
+          'Aravind Balla',
+        },
+        {
+          name: 'og:description',
+          content:
+          'Personal website of Aravind Balla, depicting his adventures while developing stuff.',
+        },
+        {
+          name: 'og:url',
+          content:
+          'http://aravindballa.com',
+        },
+        {
+          name: 'og:image',
+          content:
+          'http://aravindballa.com/img/preview.png',
+        },
+
       ]}
     />
     <div>
