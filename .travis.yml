@@ -14,5 +14,15 @@ script:
   - npm run format
   - gatsby build
 
+deploy:
+  provider: pages
+  local_dir: build
+  repo: aravindballa/aravindballa.github.io
+  target_branch: master
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
+
 notifications:
   slack: ab--space:clGeU06zSZvLRmHXGzKU4E1u
