@@ -14,3 +14,5 @@ I built this in node use Firebase as the storage and api.ai as the NLP engine. T
 I do a lot of things daily. Its hard to keep track of everything. And sometimes I feel I haven’t achieved things over a week or month. The basic idea behind this is to remind me that I have done pretty good amount of work. Turned out to be my motivation. Now I think whenever I look at my log, I have to feel happy about the work that I’ve done.
 
 Also It gets random inspirational quotes for me and can SMS my friends. It doesnot hesitate in answering simple and funny questions too.
+
+![Almador](https://imgur.com/C1Ef6CJ.png)
