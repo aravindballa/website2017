@@ -2,7 +2,7 @@
 path: '/projects/universal-copy'
 title: 'Universal Copy'
 technologies: 'Android, JS, Firebase'
-source: ''
+source: 'https://github.com/dailywageworkers/crossy'
 link: ''
 desc: 'A cross platform application which helps us copy text from one device to another. This is not into production yet. But, it will be sooner.'
 ---
@@ -14,3 +14,9 @@ Using this, we can copy stuff/text from Chrome(Web) and paste it on your mobile(
 We use many devices daily. And sharing content between them is hard. For documents and files, we have things like Google Drive and Dropbox. But if you want a link/url that you want to send or a piece of text like address that you SMS your friend, then we find it hard to send it to mobile.
 
 So I, with help of my friend, [Raghava](https://instagram.com/m_sairaghava), built this to integrate clipboards of the devices that we use in a daily basis.
+
+**Update**
+
+I don't have the code for this anymore. It was lost when I crashed my external HDD. I somehow did not push it to Github then. My bad.
+
+Along with a friend of mine, [Mahikanth Nag](http://github.com/mahikanthnag), I am starting over this project again with new features with the name **Crossy**. I will write about as soon as I find time. That repo can be found at https://github.com/dailywageworkers/crossy. 
