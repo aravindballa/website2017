@@ -27,8 +27,8 @@ const IndexPage = ({ data }) => (
         <p>Developer</p>
         <div className="content">
           <p>
-            I try to move mountains and do magic with code. I keep experimenting
-            things and love to share my experiences. When not coding, I travel.
+            I try to move mountains and do magic with code. 👨‍💻  I keep experimenting
+            things and love to share my experiences. When not coding, I travel. ✈️
           </p>
         </div>
       </div>
