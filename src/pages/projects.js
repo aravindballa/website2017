@@ -66,7 +66,8 @@ const Projects = ({ data }) => (
         <a href="https://github.com/aravindballa" target="_blank">
           Github
         </a>{' '}
-        for a complete list of repos and to know what I am working on right now.
+        for a complete list of repos and to know what I am working on right now. Also, checkout my developer story at 
+        <a href="https://stackoverflow.com/story/aravindballa" target="_blank">Stack Overflow</a>.
       </i>
     </p>
   </div>
