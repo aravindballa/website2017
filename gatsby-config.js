@@ -18,6 +18,12 @@ module.exports = {
       options: {
         username: `code-lore`
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-65268954-3',
+      },
     }
   ],
   pathPrefix: '/'
