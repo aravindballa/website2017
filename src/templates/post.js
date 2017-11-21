@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Paper from 'material-ui/Paper'
 import Chip from 'material-ui/Chip'
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from 'material-ui/RaisedButton'
 
 const handleClick = url => {
   window.open(url)
@@ -26,6 +26,41 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data
   return (
     <div>
+      <Helmet
+      title={post.frontmatter.title}
+      meta={[
+        {
+          name: 'description',
+          content: post.frontmatter.desc,
+        },
+        {
+          name: 'keywords',
+          content:
+          'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
+        },
+        {
+          name: 'og:title',
+          content:
+          post.frontmatter.title,
+        },
+        {
+          name: 'og:description',
+          content:
+          post.frontmatter.desc,
+        },
+        {
+          name: 'og:url',
+          content:
+          'http://aravindballa.com' + post.frontmatter.path,
+        },
+        {
+          name: 'og:image',
+          content:
+          'http://aravindballa.com/img/preview.png',
+        },
+
+      ]}
+    />
       <PostBackground color="#FF822E" />
       <Paper zDepth={1} className="post">
         <h1>{post.frontmatter.title}</h1>
@@ -75,6 +110,7 @@ export const postQuery = graphql`
         technologies
         source
         link
+        desc
       }
     }
   }

@@ -5,9 +5,45 @@ import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 import { blueGrey500 } from 'material-ui/styles/colors'
+import Helmet from 'react-helmet'
 
 const IndexPage = ({ data }) => (
   <div>
+    <Helmet
+      title="Aravind Balla"
+      meta={[
+        {
+          name: 'description',
+          content: 'Personal website of web developer Aravind Balla.',
+        },
+        {
+          name: 'keywords',
+          content:
+          'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
+        },
+        {
+          name: 'og:title',
+          content:
+          'Aravind Balla',
+        },
+        {
+          name: 'og:description',
+          content:
+          'Personal website of Aravind Balla, depicting his adventures while developing stuff.',
+        },
+        {
+          name: 'og:url',
+          content:
+          'http://aravindballa.com',
+        },
+        {
+          name: 'og:image',
+          content:
+          'http://aravindballa.com/img/preview.png',
+        },
+
+      ]}
+    />
     <div className="toprect" />
     <div className="row">
       <Avatar
