@@ -88,9 +88,16 @@ const IndexPage = ({ data }) => (
         ))}
       </div>
 
-      <Link to="/projects/" className="see-all">
-        All projects <KeyboardArrowRight color="lightgray" />
-      </Link>
+      <div className="see-all">
+        <Link to="/projects/">
+          <FlatButton
+            fullWidth={true}
+            backgroundColor="#EFEFEF"
+            label="All Projects"
+            hoverColor="#FF822E80"
+          />
+        </Link>
+      </div>
     </div>
     <div className="section-wrap">
       <h3>Latest Writings</h3>
@@ -107,9 +114,18 @@ const IndexPage = ({ data }) => (
           </Card>
         ))}
       </div>
-      <a href="https://medium.com/@aravindballa/latest" className="see-all">
-        All writings <KeyboardArrowRight color="lightgray" />
-      </a>
+
+      <div className="see-all">
+        <a href="https://medium.com/@aravindballa/latest">
+          <FlatButton
+            fullWidth={true}
+            backgroundColor="#EFEFEF"
+            label="All Writings"
+            hoverColor="#FF822E80"
+          />
+        </a>
+      </div>
+
     </div>
   </div>
 )

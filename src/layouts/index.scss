@@ -699,16 +699,11 @@ pre tt:after {
 
   .see-all {
     margin-top: 10px;
-    display: inline-flex;
-    vertical-align: middle;
-    color: gray;
-    text-decoration: none;
-    font-weight: 200;
-    font-size: 0.8em;
-    float: right;
 
     &:hover {
-      color: darkgray;
+      & > a > button > div > span{
+        color: white;
+      }
     }
   }
 }
