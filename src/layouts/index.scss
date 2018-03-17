@@ -679,6 +679,13 @@ pre tt:after {
 .project-card {
   max-width: 300px;
   margin-top: 10px;
+
+  & > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .index-projects {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Avatar from 'material-ui/Avatar'
-import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
+import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card'
 import FlatButton from 'material-ui/FlatButton'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 import { blueGrey500 } from 'material-ui/styles/colors'
@@ -19,27 +19,27 @@ const IndexPage = ({ data }) => (
         {
           name: 'keywords',
           content:
-          'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
+            'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
         },
         {
           name: 'og:title',
           content:
-          'Aravind Balla',
+            'Aravind Balla',
         },
         {
           name: 'og:description',
           content:
-          'Personal website of Aravind Balla, depicting his adventures while developing stuff.',
+            'Personal website of Aravind Balla, depicting his adventures while developing stuff.',
         },
         {
           name: 'og:url',
           content:
-          'http://aravindballa.com',
+            'http://aravindballa.com',
         },
         {
           name: 'og:image',
           content:
-          'http://aravindballa.com/img/preview.png',
+            'http://aravindballa.com/img/preview.png',
         },
 
       ]}
@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => (
       <div className="index-projects">
         {data.allMarkdownRemark.edges.map(post => (
           <Card className="project-card" key={post.node.id}>
-            <CardHeader
+            <CardTitle
               title={post.node.frontmatter.title}
               subtitle={post.node.frontmatter.technologies}
             />
@@ -97,7 +97,7 @@ const IndexPage = ({ data }) => (
       <div className="index-projects">
         {data.allMediumPost.edges.map(post => (
           <Card className="project-card" key={post.node.id}>
-            <CardHeader title={post.node.title} />
+            <CardTitle title={post.node.title} />
             <CardText>{post.node.virtuals.subtitle}</CardText>
             <CardActions>
               <a href={'https://medium.com/code-lore/' + post.node.uniqueSlug}>
