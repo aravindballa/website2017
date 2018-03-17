@@ -15,8 +15,8 @@ const Projects = ({ data }) => (
   <div className="projects-wrap">
     <h1>Projects</h1>
     <p>
-      I love building things. These are the stuff I built. <br />Some for fun.
-      Some for productivity!
+      I love building things. 👷🏻‍♂️ These are the stuff I built. <br />Some for fun. 🙋🏻‍♂️
+      Some for productivity! 👨🏻‍💻
     </p>
 
     {data.allMarkdownRemark.edges.map(post => (
@@ -43,8 +43,8 @@ const Projects = ({ data }) => (
               <Code color={blueGrey300} />
             </IconButton>
           ) : (
-            <span />
-          )}
+              <span />
+            )}
           {post.node.frontmatter.link ? (
             <IconButton
               tooltip="Open"
@@ -53,8 +53,8 @@ const Projects = ({ data }) => (
               <Launch color={blueGrey300} />
             </IconButton>
           ) : (
-            <span />
-          )}
+              <span />
+            )}
         </div>
         <Divider />
       </div>
@@ -66,8 +66,8 @@ const Projects = ({ data }) => (
         <a href="https://github.com/aravindballa" target="_blank">
           Github
         </a>{' '}
-        for a complete list of repos and to know what I am working on right now. Also, checkout my developer story at 
-        <a href="https://stackoverflow.com/story/aravindballa" target="_blank">Stack Overflow</a>.
+        for a complete list of repos and to know what I am working on right now. Also, checkout my developer story at
+        <a href="https://stackoverflow.com/story/aravindballa" target="_blank"> Stack Overflow</a>.
       </i>
     </p>
   </div>
