@@ -3,6 +3,7 @@ module.exports = {
     title: `Aravind Balla Website`,
   },
   plugins: [
+    `gatsby-plugin-react-next`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
