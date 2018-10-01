@@ -15,4 +15,10 @@ This is generated using [Gatsby JS](https://www.gatsbyjs.org), a static-site gen
 
 - Run `gatsby build`
 
+---
+
+<a href="https://www.netlify.com">
+  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
+</a>
+
 

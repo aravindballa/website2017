@@ -6,6 +6,7 @@ import FlatButton from 'material-ui/FlatButton'
 import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
 import { blueGrey500 } from 'material-ui/styles/colors'
 import Helmet from 'react-helmet'
+import { Spring } from 'react-spring'
 
 const IndexPage = ({ data }) => (
   <div>
@@ -45,17 +46,25 @@ const IndexPage = ({ data }) => (
       ]}
     />
     <div className="toprect" />
-    <div className="row">
-      <Avatar
-        alt="Aravind Balla"
-        src="https://avatars1.githubusercontent.com/u/8036315?v=4&s=460"
-        style={{
-          height: 160,
-          width: 160,
-          marginTop: 50,
-        }}
-      />
-    </div>
+    <Spring
+      from={{ marginTop: 0, opacity: 0 }}
+      to={{ marginTop: 50, opacity: 1 }}
+    >
+      {({ opacity }) => (
+        <div className="row">
+          <Avatar
+            alt="Aravind Balla"
+            src="https://avatars1.githubusercontent.com/u/8036315?v=4&s=460"
+            style={{
+              height: 160,
+              width: 160,
+              marginTop: 50,
+              opacity
+            }}
+          />
+        </div>
+      )}
+    </Spring>
     <div className="row">
       <div className="title">
         <h1>Aravind Balla</h1>
