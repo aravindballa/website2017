@@ -28,10 +28,7 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "styled-components": "^4.1.2",
-    "typeface-merriweather": "0.0.43",
-    "typeface-montserrat": "0.0.43",
-    "typography": "^0.16.17",
-    "typography-theme-wordpress-2016": "^0.15.10"
+    "typography": "^0.16.17"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
