@@ -2,6 +2,7 @@ import React from 'react';
 
 import profilePic from './profile-pic.jpg';
 import { rhythm } from '../utils/typography';
+import { colors } from '../utils/theme';
 
 class Bio extends React.Component {
   render() {
@@ -14,18 +15,25 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Aravind Balla`}
           style={{
+            borderRadius: '50%',
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
             width: rhythm(2),
             height: rhythm(2),
           }}
         />
-        <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San Francisco building
-          useful things.{' '}
-          <a href="https://twitter.com/kylemathews">You should follow him on Twitter</a>
+        <p style={{ color: colors.palered }}>
+          By <strong>Aravind Balla</strong> who is a cool human, buiding things for himself, and
+          sometimes for others.{' '}
+          <a
+            style={{ color: colors.palered }}
+            href="https://twitter.com/aravindballa"
+            target="_blank"
+          >
+            You should follow him on Twitter
+          </a>
         </p>
       </div>
     );

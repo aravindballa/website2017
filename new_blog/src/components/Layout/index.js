@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { rhythm, scale } from '../../utils/typography';
+import Footer from '../Footer';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 
 class Layout extends React.Component {
@@ -13,42 +13,31 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       header = (
         <h1>
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            {title}
-          </Link>
+          <Link to={'/'}>{title}</Link>
         </h1>
       );
     } else {
       header = (
         <StyledCrumb>
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            <span>{title}</span>
-            <span>{'/'}</span>
-            <span>{location.pathname.replace(/\//, '')}</span>
-          </Link>
+          <span>
+            <Link to={'/'}>{title}</Link>
+          </span>
+          <span>{'/'}</span>
+          <span>
+            <Link to={'/projects'}>{location.pathname.match(/projects/) ? 'projects' : ''}</Link>
+          </span>
         </StyledCrumb>
       );
     }
     return (
-      <StyledLayout>
-        <GlobalStyle />
-        {header}
-        {children}
-      </StyledLayout>
+      <React.Fragment>
+        <StyledLayout>
+          <GlobalStyle />
+          {header}
+          {children}
+        </StyledLayout>
+        {location.pathname !== rootPath && <Footer />}
+      </React.Fragment>
     );
   }
 }

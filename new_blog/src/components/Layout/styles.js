@@ -10,6 +10,15 @@ export const GlobalStyle = createGlobalStyle`
 
   h1,h2,h3 {
     color: ${colors.headings};
+      a {
+      box-shadow: none;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover: {
+        text-decoration: none;
+      }
+    }
   }
 
   a {
@@ -21,6 +30,10 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
       text-decoration-color: ${colors.red};
     }
+  }
+
+  hr {
+    background: gray;
   }
 `;
 

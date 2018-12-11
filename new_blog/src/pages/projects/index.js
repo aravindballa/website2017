@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
 import Layout from '../../components/Layout';
-import { StyledProject } from '../../components/styles/projects';
+import { StyledProject, StyledSummary } from '../../components/styles/projects';
 
 class BlogIndex extends React.Component {
   render() {
@@ -37,7 +37,8 @@ class BlogIndex extends React.Component {
             </StyledProject>
           );
         })}
-        <p>
+        <hr />
+        <StyledSummary>
           <i>Follow me on </i>
           <a href="https://github.com/aravindballa" target="_blank">
             Github
@@ -50,7 +51,7 @@ class BlogIndex extends React.Component {
             Stack Overflow
           </a>
           <i>.</i>
-        </p>
+        </StyledSummary>
       </Layout>
     );
   }

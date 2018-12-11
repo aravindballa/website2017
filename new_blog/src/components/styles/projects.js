@@ -11,3 +11,7 @@ export const StyledProject = styled.div`
     color: ${colors.blue};
   }
 `;
+
+export const StyledSummary = styled.p`
+  color: ${colors.palered};
+`;
