@@ -1,24 +1,11 @@
-[![Build Status](https://travis-ci.org/aravindballa/website2017.svg?branch=master)](https://travis-ci.org/aravindballa/website2017)
+# gatsby-starter-blog
+Gatsby starter for creating a blog
 
-# aravindballa.com
+Install this starter (assuming Gatsby is installed) by running from your CLI:
 
-![AB](https://i.imgur.com/nUqfNwX.png)
+`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
 
-This is generated using [Gatsby JS](https://www.gatsbyjs.org), a static-site generator for react.
+Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
 
-- Clone the repo
-- Run `npm install`
-- Run `gatsby develop`
-
-
-## Deploy
-
-- Run `gatsby build`
-
----
-
-<a href="https://www.netlify.com">
-  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg"/>
-</a>
-
-
+## Running in development
+`gatsby develop`
