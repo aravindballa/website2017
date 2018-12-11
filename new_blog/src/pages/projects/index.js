@@ -2,9 +2,8 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Bio from '../../components/Bio'
 import Layout from '../../components/Layout'
-import { rhythm } from '../../utils/typography'
+import { StyledProject } from '../../components/styles/projects';
 
 class BlogIndex extends React.Component {
   render() {
@@ -20,24 +19,35 @@ class BlogIndex extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
+        <p>
+          I love building things. 👷 These are the stuff I built. <br />Some for fun. 🤸🏻‍♂️
+          Some for productivity! 👨🏻‍💻
+        </p>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+            <StyledProject key={node.fields.slug}>
+              <h3>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            </StyledProject>
           )
         })}
+        <p>
+          <i>
+            Follow me on{' '} </i>
+          <a href="https://github.com/aravindballa" target="_blank">
+            Github
+            </a>{' '} <i>
+            for a complete list of repos and to know what I am working on right now.
+            Also, checkout my developer story at{' '}</i>
+          <a href="https://stackoverflow.com/story/aravindballa" target="_blank">Stack Overflow</a><i>.
+          </i>
+        </p>
       </Layout>
     )
   }

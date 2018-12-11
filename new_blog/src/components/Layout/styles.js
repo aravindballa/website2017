@@ -29,5 +29,17 @@ export const StyledLayout = styled.div`
   margin-right: auto;
   max-width: ${rhythm(24)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
-
 `
+
+export const StyledCrumb = styled.h2`
+  a {
+    box-shadow: none;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  span {
+    text-transform:capitalize;
+    margin-right: ${rhythm(1 / 4)};
+  }
+`;

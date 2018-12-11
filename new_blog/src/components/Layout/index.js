@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { rhythm, scale } from '../../utils/typography';
-import { StyledLayout, GlobalStyle } from './styles';
+import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 
 class Layout extends React.Component {
   render() {
@@ -12,13 +12,7 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
+        <h1>
           <Link
             style={{
               boxShadow: 'none',
@@ -33,7 +27,7 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <h3>
+        <StyledCrumb>
           <Link
             style={{
               boxShadow: 'none',
@@ -42,9 +36,11 @@ class Layout extends React.Component {
             }}
             to={'/'}
           >
-            {title}
+            <span>{title}</span>
+            <span>{'/'}</span>
+            <span>{location.pathname.replace(/\//, '')}</span>
           </Link>
-        </h3>
+        </StyledCrumb>
       )
     }
     return (

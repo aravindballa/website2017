@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/Layout'
+import { StyledIndex } from '../components/styles/index-page';
 
 class BlogIndex extends React.Component {
   render() {
@@ -11,17 +12,20 @@ class BlogIndex extends React.Component {
     const siteDescription = data.site.siteMetadata.description
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={siteTitle}
-        />
-        <nav>
-          <p><Link to="/projects">Projects</Link></p>
-          <p><Link to="https://dev.to/aravindballa">Writings</Link></p>
-        </nav>
-      </Layout>
+      <StyledIndex>
+        <Layout location={this.props.location} title={siteTitle}>
+          <Helmet
+            htmlAttributes={{ lang: 'en' }}
+            meta={[{ name: 'description', content: siteDescription }]}
+            title={siteTitle}
+          />
+          <p><i>Software Developer</i></p>
+          <nav>
+            <p><Link to="/projects">Projects</Link></p>
+            <p><a href="https://dev.to/aravindballa">Writings</a></p>
+          </nav>
+        </Layout>
+      </StyledIndex >
     )
   }
 }
