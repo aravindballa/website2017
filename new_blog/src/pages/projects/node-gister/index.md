@@ -1,7 +1,7 @@
 ---
 path: '/projects/node-gister'
 title: 'Node Gister'
-date: "2018-01-02T18:30:00.000Z"
+date: '2018-01-02T18:30:00.000Z'
 technologies: 'Node'
 source: 'https://github.com/aravindballa/node-gister'
 link: 'https://www.npmjs.com/package/gister-cli'

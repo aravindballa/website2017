@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 import { rhythm, scale } from '../../utils/typography';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { location, title, children } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
@@ -24,7 +24,7 @@ class Layout extends React.Component {
             {title}
           </Link>
         </h1>
-      )
+      );
     } else {
       header = (
         <StyledCrumb>
@@ -41,7 +41,7 @@ class Layout extends React.Component {
             <span>{location.pathname.replace(/\//, '')}</span>
           </Link>
         </StyledCrumb>
-      )
+      );
     }
     return (
       <StyledLayout>
@@ -49,8 +49,8 @@ class Layout extends React.Component {
         {header}
         {children}
       </StyledLayout>
-    )
+    );
   }
 }
 
-export default Layout
+export default Layout;

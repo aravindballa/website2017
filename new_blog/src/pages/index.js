@@ -1,15 +1,15 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Helmet from 'react-helmet'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 import { StyledIndex } from '../components/styles/index-page';
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title
-    const siteDescription = data.site.siteMetadata.description
+    const siteTitle = data.site.siteMetadata.title;
+    const siteDescription = data.site.siteMetadata.description;
 
     return (
       <StyledIndex>
@@ -19,18 +19,24 @@ class BlogIndex extends React.Component {
             meta={[{ name: 'description', content: siteDescription }]}
             title={siteTitle}
           />
-          <p><i>Software Developer</i></p>
+          <p>
+            <i>Software Developer</i>
+          </p>
           <nav>
-            <p><Link to="/projects">Projects</Link></p>
-            <p><a href="https://dev.to/aravindballa">Writings</a></p>
+            <p>
+              <Link to="/projects">Projects</Link>
+            </p>
+            <p>
+              <a href="https://dev.to/aravindballa">Writings</a>
+            </p>
           </nav>
         </Layout>
-      </StyledIndex >
-    )
+      </StyledIndex>
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -41,4 +47,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

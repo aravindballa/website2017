@@ -1,7 +1,7 @@
 ---
 path: '/projects/universal-copy'
 title: 'Universal Copy'
-date: "2017-11-09T18:30:00.000Z"
+date: '2017-11-09T18:30:00.000Z'
 technologies: 'Android, JS, Firebase, Webpack'
 source: 'https://github.com/dailywageworkers/crosstalk-chrome'
 link: ''
@@ -20,4 +20,4 @@ So I, with help of my friend, [Raghava](https://instagram.com/m_sairaghava), bui
 
 I don't have the code for this anymore. I lost it when I crashed my external HDD. I somehow did not push it to Github then. My bad.
 
-Along with a friend of mine, [Mahikanth Nag](http://github.com/mahikanthnag), I am starting over this project again with new features with the name **Cross Talk**. I will write about as soon as I find time. That repo can be found at https://github.com/dailywageworkers/crosstalk-chrome. 
+Along with a friend of mine, [Mahikanth Nag](http://github.com/mahikanthnag), I am starting over this project again with new features with the name **Cross Talk**. I will write about as soon as I find time. That repo can be found at https://github.com/dailywageworkers/crosstalk-chrome.

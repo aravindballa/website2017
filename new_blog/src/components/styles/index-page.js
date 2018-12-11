@@ -21,7 +21,7 @@ export const StyledIndex = styled.div`
   }
 
   nav {
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: space-around;
   }

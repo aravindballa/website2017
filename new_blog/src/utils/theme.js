@@ -7,7 +7,7 @@ const colors = {
   green: '#67D3BE',
   purple: '#8A65AA',
   yellow: '#F5BF32',
-  palered: '#EB697F'
-}
+  palered: '#EB697F',
+};
 
 export { colors };
