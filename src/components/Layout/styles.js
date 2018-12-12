@@ -2,6 +2,11 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { rhythm, scale } from '../../utils/typography';
 import { colors } from '../../utils/theme';
 
+/**
+ * Global styles are placed here instead of gatsby-browser.js
+ * beacuse, we make use of the power of styled-components
+ * and can change the theme easyly.
+ */
 export const GlobalStyle = createGlobalStyle`
   body {
     background: ${colors.background};
