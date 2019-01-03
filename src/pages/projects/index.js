@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 
 import Layout from '../../components/Layout';
 import { StyledProject, StyledSummary } from '../../components/styles/projects';
+import SEO from '../../components/SEO';
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,11 +15,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={siteTitle}
-        />
+        <SEO frontmatter={{ title: 'Projects', slug: '/projects' }} />
         <p>
           I love building things. 👷 These are the stuff I built. <br />
           Some for fun. 🤸🏻‍♂️ Some for productivity! 👨🏻‍💻

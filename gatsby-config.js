@@ -1,9 +1,18 @@
 module.exports = {
   siteMetadata: {
     title: 'Aravind Balla',
-    author: 'Aravind balla',
+    author: 'Aravind Balla',
+    image: 'https://aravindballa.com/avatar.jpg',
     description: 'Discoveries and rants of a developer while developing stuff',
     siteUrl: 'https://aravindballa.com/',
+    social: {
+      twitter: 'aravindballa'
+    },
+    organization: {
+      name: 'Aravind Balla',
+      url: 'https://aravindballa.com',
+      logo: 'https://aravindballa.com/logo.png',
+    },
   },
   pathPrefix: '/',
   plugins: [
@@ -33,6 +42,9 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
+          {
+            resolve: require.resolve('./plugins/remark-embedder')
+          }
         ],
       },
     },

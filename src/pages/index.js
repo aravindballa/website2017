@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 import { StyledIndex } from '../components/styles/index-page';
+import SEO from '../components/SEO';
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,11 +15,7 @@ class BlogIndex extends React.Component {
     return (
       <StyledIndex>
         <Layout location={this.props.location} title={siteTitle}>
-          <Helmet
-            htmlAttributes={{ lang: 'en' }}
-            meta={[{ name: 'description', content: siteDescription }]}
-            title={siteTitle}
-          />
+          <SEO />
           <p>
             <i>Software Developer</i>
           </p>

@@ -1,12 +1,13 @@
 ---
-path: '/projects/universal-copy'
 title: 'Universal Copy'
 date: '2017-11-09T18:30:00.000Z'
 technologies: 'Android, JS, Firebase, Webpack'
 source: 'https://github.com/dailywageworkers/crosstalk-chrome'
 link: ''
-desc: 'A cross platform application which helps us copy text from one device to another. This is not into production yet. But, it will be sooner.'
+description: 'A cross platform application which helps us copy text from one device to another. This is not into production yet. But, it will be sooner.'
 ---
+
+https://github.com/dailywageworkers/crosstalk-chrome
 
 I like building things that make me more productive. Things which support me in the work I do. One of them is Universal Copy.
 

@@ -12,6 +12,7 @@ const typography = new Typography({
     'sans-serif',
   ],
   bodyFontFamily: ['Inconsolata', 'monospace'],
+  googleFonts: [{ name: 'Inconsolata', styles: [200, 400, 600] }]
 });
 
 // Hot reload typography in development.

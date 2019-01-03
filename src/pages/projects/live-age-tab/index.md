@@ -1,12 +1,13 @@
 ---
-path: '/projects/live-age-tab'
 title: 'Live Age Tab'
 date: '2017-11-20T18:30:00.000Z'
 technologies: 'JS'
 source: 'https://github.com/aravindballa/live-age-chrome'
 link: ''
-desc: 'New Tab extension for chrome which displays me my live age. It keeps incrementing for every second. A quick one!'
+description: 'New Tab extension for chrome which displays me my live age. It keeps incrementing for every second. A quick one!'
 ---
+
+https://github.com/aravindballa/live-age-chrome
 
 ![LiveAgeTab](./live-age-tab.png)
 

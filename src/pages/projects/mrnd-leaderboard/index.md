@@ -1,12 +1,13 @@
 ---
-path: '/projects/mrnd-leaderboard'
 title: 'MRND Leaderboard'
 technologies: 'Angular, Firebase, Node'
 date: '2017-08-28T18:30:00.000Z'
 source: 'https://github.com/aravindballa/MRNDLeaderboard'
 link: 'http://mrnd.herokuapp.com'
-desc: 'A leaderboard built using Angular and node for MRND. It contains the stats of the students and their progress on SPOJ problems.'
+description: 'A leaderboard built using Angular and node for MRND. It contains the stats of the students and their progress on SPOJ problems.'
 ---
+
+https://github.com/aravindballa/MRNDLeaderboard
 
 ![leaderboard](./mrnd-leaderboard.png)
 

@@ -40,6 +40,13 @@ export const GlobalStyle = createGlobalStyle`
   hr {
     background: gray;
   }
+
+  .gh-card-wrap {
+    text-align: center;
+    iframe {
+      margin: 0;
+    }
+  }
 `;
 
 export const StyledLayout = styled.div`
