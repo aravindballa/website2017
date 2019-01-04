@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    published
                   }
                 }
               }
@@ -34,6 +35,11 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allMarkdownRemark.edges;
 
         posts.forEach((post, index) => {
+          if (post.node.frontmatter.published !== null) {
+            if (post.node.frontmatter.published === false) {
+              return;
+            }
+          }
           const previous = index === posts.length - 1 ? null : posts[index + 1].node;
           const next = index === 0 ? null : posts[index - 1].node;
 
