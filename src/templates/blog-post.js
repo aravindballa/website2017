@@ -19,8 +19,10 @@ class BlogPostTemplate extends React.Component {
         <h1>{post.frontmatter.title}</h1>
         <StyledDate>{post.frontmatter.date}</StyledDate>
         <StyledTech>
-          Tech used - {' '}
-          {post.frontmatter.technologies.split(',').map(tech => <span>{tech.trim()}</span>)}
+          Tech used -{' '}
+          {post.frontmatter.technologies.split(',').map(tech => (
+            <span>{tech.trim()}</span>
+          ))}
         </StyledTech>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr

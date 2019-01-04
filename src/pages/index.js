@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import { StyledIndex } from '../components/styles/index-page';
 import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 
 class BlogIndex extends React.Component {
   render() {
@@ -13,22 +14,25 @@ class BlogIndex extends React.Component {
     const siteDescription = data.site.siteMetadata.description;
 
     return (
-      <StyledIndex>
-        <Layout location={this.props.location} title={siteTitle}>
-          <SEO />
-          <p>
-            <i>Software Developer</i>
-          </p>
-          <nav>
+      <React.Fragment>
+        <StyledIndex>
+          <Layout location={this.props.location} title={siteTitle}>
+            <SEO />
             <p>
-              <Link to="/projects">Projects</Link>
+              <i>Software Developer</i>
             </p>
-            <p>
-              <a href="https://dev.to/aravindballa">Writings</a>
-            </p>
-          </nav>
-        </Layout>
-      </StyledIndex>
+            <nav>
+              <p>
+                <Link to="/projects">Projects</Link>
+              </p>
+              <p>
+                <a href="https://dev.to/aravindballa">Writings</a>
+              </p>
+            </nav>
+          </Layout>
+        </StyledIndex>
+        <Footer />
+      </React.Fragment>
     );
   }
 }
