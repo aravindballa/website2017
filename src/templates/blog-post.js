@@ -18,12 +18,14 @@ class BlogPostTemplate extends React.Component {
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
         <StyledDate>{post.frontmatter.date}</StyledDate>
-        <StyledTech>
-          Tech used -{' '}
-          {post.frontmatter.technologies.split(',').map(tech => (
-            <span>{tech.trim()}</span>
-          ))}
-        </StyledTech>
+        {post.frontmatter.technologies && (
+          <StyledTech>
+            Tech used -{' '}
+            {post.frontmatter.technologies.split(',').map(tech => (
+              <span>{tech.trim()}</span>
+            ))}
+          </StyledTech>
+        )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{

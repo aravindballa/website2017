@@ -23,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     published
+                    type
                   }
                 }
               }
@@ -39,8 +40,14 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allMarkdownRemark.edges;
 
         posts.forEach((post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+          let previous = index === posts.length - 1 ? null : posts[index + 1].node;
+          let next = index === 0 ? null : posts[index - 1].node;
+          if (previous && previous.frontmatter.type !== post.node.frontmatter.type) {
+            previous = null;
+          }
+          if (next && next.frontmatter.type !== post.node.frontmatter.type) {
+            next = null;
+          }
 
           createPage({
             path: post.node.fields.slug,

@@ -26,7 +26,7 @@ class BlogIndex extends React.Component {
                 <Link to="/projects">Projects</Link>
               </p>
               <p>
-                <a href="https://dev.to/aravindballa">Writings</a>
+                <Link to="/writings">Writings</Link>
               </p>
             </nav>
           </Layout>

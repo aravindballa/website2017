@@ -1,5 +1,7 @@
 import './src/utils/theme.css';
 
+// require("prismjs/themes/prism-tomorrow.css");
+
 export const onRouteUpdate = () => {
   // Load JS required for github cards
   if (document.querySelector('.github-card') !== null) {
