@@ -20,3 +20,18 @@ export const StyledNextPrev = styled.ul`
     color: ${colors.yellow};
   }
 `;
+
+export const StyledTech = styled.div`
+  span {
+    margin-right: 10px;
+    border: 1px solid ${colors.purple};
+    padding: 4px 8px;
+    border-radius: 10px;
+    color: ${colors.purple};
+
+    &:hover {
+      color: magenta;
+      border-color: magenta;
+    }
+  }
+`;

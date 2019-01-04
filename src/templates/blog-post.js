@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { StyledDate, StyledNextPrev } from '../components/styles/post';
+import { StyledDate, StyledNextPrev, StyledTech } from '../components/styles/post';
 import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
@@ -18,6 +18,10 @@ class BlogPostTemplate extends React.Component {
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
         <StyledDate>{post.frontmatter.date}</StyledDate>
+        <StyledTech>
+          Tech used - {' '}
+          {post.frontmatter.technologies.split(',').map(tech => <span>{tech.trim()}</span>)}
+        </StyledTech>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -65,6 +69,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        technologies
       }
       fields {
         slug
