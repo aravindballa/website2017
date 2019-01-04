@@ -1,177 +1,51 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Avatar from 'material-ui/Avatar'
-import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card'
-import FlatButton from 'material-ui/FlatButton'
-import KeyboardArrowRight from 'material-ui/svg-icons/hardware/keyboard-arrow-right'
-import { blueGrey500 } from 'material-ui/styles/colors'
-import Helmet from 'react-helmet'
-import { Spring } from 'react-spring'
+import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-const IndexPage = ({ data }) => (
-  <div>
-    <Helmet
-      title="Aravind Balla"
-      meta={[
-        {
-          name: 'description',
-          content: 'Personal website of web developer Aravind Balla.',
-        },
-        {
-          name: 'keywords',
-          content:
-            'aravind, aravindballa, web, web developer, saiaravind, designer, thinker, developer',
-        },
-        {
-          name: 'og:title',
-          content:
-            'Aravind Balla',
-        },
-        {
-          name: 'og:description',
-          content:
-            'Personal website of Aravind Balla, depicting his adventures while developing stuff.',
-        },
-        {
-          name: 'og:url',
-          content:
-            'http://aravindballa.com',
-        },
-        {
-          name: 'og:image',
-          content:
-            'http://aravindballa.com/img/preview.png',
-        },
+import Layout from '../components/Layout';
+import { StyledIndex } from '../components/styles/index-page';
+import SEO from '../components/SEO';
+import Footer from '../components/Footer';
 
-      ]}
-    />
-    <div className="toprect" />
-    <Spring
-      from={{ marginTop: 0, opacity: 0 }}
-      to={{ marginTop: 50, opacity: 1 }}
-    >
-      {({ opacity }) => (
-        <div className="row">
-          <Avatar
-            alt="Aravind Balla"
-            src="https://avatars1.githubusercontent.com/u/8036315?v=4&s=460"
-            style={{
-              height: 160,
-              width: 160,
-              marginTop: 50,
-              opacity
-            }}
-          />
-        </div>
-      )}
-    </Spring>
-    <div className="row">
-      <div className="title">
-        <h1>Aravind Balla</h1>
-        {/* TODO: replace with a component. */}
-        <p>Developer</p>
-        <div className="content">
-          <p>
-            I try to move mountains and do magic with code. 👨‍💻  I keep experimenting
-            things and love to share my experiences. When not coding, I travel. ✈️
-          </p>
-        </div>
-      </div>
-    </div>
-    <div className="section-wrap">
-      <h3>Latest Projects</h3>
-      <div className="index-projects">
-        {data.allMarkdownRemark.edges.map(post => (
-          <Card className="project-card" key={post.node.id}>
-            <CardTitle
-              title={post.node.frontmatter.title}
-              subtitle={post.node.frontmatter.technologies}
-            />
-            <CardText>{post.node.frontmatter.desc}</CardText>
-            <CardActions>
-              <Link to={post.node.frontmatter.path}>
-                <FlatButton label="Read More" primary={true} fullWidth={true} />
-              </Link>
-            </CardActions>
-          </Card>
-        ))}
-      </div>
+class BlogIndex extends React.Component {
+  render() {
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const siteDescription = data.site.siteMetadata.description;
 
-      <div className="see-all">
-        <Link to="/projects/">
-          <FlatButton
-            fullWidth={true}
-            backgroundColor="#EFEFEF"
-            label="All Projects"
-            hoverColor="#FF822E80"
-          />
-        </Link>
-      </div>
-    </div>
-    <div className="section-wrap">
-      <h3>Latest Writings</h3>
-      <div className="index-projects">
-        {data.allMediumPost.edges.map(post => (
-          <Card className="project-card" key={post.node.id}>
-            <CardTitle title={post.node.title} />
-            <CardText>{post.node.virtuals.subtitle}</CardText>
-            <CardActions>
-              <a href={'https://medium.com/code-lore/' + post.node.uniqueSlug}>
-                <FlatButton label="Read More" primary={true} fullWidth={true} />
-              </a>
-            </CardActions>
-          </Card>
-        ))}
-      </div>
+    return (
+      <React.Fragment>
+        <StyledIndex>
+          <Layout location={this.props.location} title={siteTitle}>
+            <SEO />
+            <p>
+              <i>Software Developer</i>
+            </p>
+            <nav>
+              <p>
+                <Link to="/projects">Projects</Link>
+              </p>
+              <p>
+                <a href="https://dev.to/aravindballa">Writings</a>
+              </p>
+            </nav>
+          </Layout>
+        </StyledIndex>
+        <Footer />
+      </React.Fragment>
+    );
+  }
+}
 
-      <div className="see-all">
-        <a href="https://medium.com/@aravindballa/latest">
-          <FlatButton
-            fullWidth={true}
-            backgroundColor="#EFEFEF"
-            label="All Writings"
-            hoverColor="#FF822E80"
-          />
-        </a>
-      </div>
+export default BlogIndex;
 
-    </div>
-  </div>
-)
-
-export const pageIndexQuery = graphql`
-  query ProjectsPostsIndexQuery {
-    allMediumPost(sort: { fields: [createdAt], order: DESC }, limit: 3) {
-      edges {
-        node {
-          id
-          title
-          uniqueSlug
-          virtuals {
-            subtitle
-          }
-          author {
-            name
-          }
-        }
-      }
-    }
-    allMarkdownRemark(limit: 3) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            path
-            technologies
-            source
-            link
-            desc
-          }
-        }
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
       }
     }
   }
-`
-
-export default IndexPage
+`;
