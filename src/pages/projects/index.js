@@ -20,22 +20,20 @@ class BlogIndex extends React.Component {
           I love building things. 👷 These are the stuff I built. <br />
           Some for fun. 🤸🏻‍♂️ Some for productivity! 👨🏻‍💻
         </p>
-        {posts
-          .filter(post => post.node.frontmatter.published !== false)
-          .map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
-            return (
-              <StyledProject key={node.fields.slug}>
-                <h3>
-                  <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                    {title}
-                  </Link>
-                </h3>
-                <small>{node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </StyledProject>
-            );
-          })}
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug;
+          return (
+            <StyledProject key={node.fields.slug}>
+              <h3>
+                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </h3>
+              <small>{node.frontmatter.date}</small>
+              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            </StyledProject>
+          );
+        })}
         <hr />
         <StyledSummary>
           <i>Follow me on </i>
@@ -66,7 +64,10 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC },
+      filter: {frontmatter: { published: { ne: false } }}
+     ) {
       edges {
         node {
           excerpt
