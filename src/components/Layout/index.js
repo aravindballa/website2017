@@ -4,6 +4,16 @@ import { Link } from 'gatsby';
 import Footer from '../Footer';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 
+const renderBreadcrumb = pathname => {
+  if (pathname.match(/projects/)) {
+    return <Link to={'/projects'}>projects</Link>;
+  } else if (pathname.match(/writings/)) {
+    return <Link to={'/writings'}>writings</Link>;
+  } else {
+    return '';
+  }
+};
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props;
@@ -23,9 +33,7 @@ class Layout extends React.Component {
             <Link to={'/'}>{title}</Link>
           </span>
           <span>{'/'}</span>
-          <span>
-            <Link to={'/projects'}>{location.pathname.match(/projects/) ? 'projects' : ''}</Link>
-          </span>
+          <span>{renderBreadcrumb(location.pathname)}</span>
         </StyledCrumb>
       );
     }

@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 import { StyledProject, StyledSummary } from '../../components/styles/projects';
 import SEO from '../../components/SEO';
 
-class BlogIndex extends React.Component {
+class WritingsIndex extends React.Component {
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
@@ -14,11 +14,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO frontmatter={{ title: 'Projects', slug: '/projects' }} />
-        <p>
-          I love building things. 👷 These are the stuff I built. <br />
-          Some for fun. 🤸🏻‍♂️ Some for productivity! 👨🏻‍💻
-        </p>
+        <SEO frontmatter={{ title: 'Writings', slug: '/writings' }} />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
@@ -35,25 +31,22 @@ class BlogIndex extends React.Component {
         })}
         <hr />
         <StyledSummary>
-          <i>Follow me on </i>
-          <a href="https://github.com/aravindballa" target="_blank">
-            Github
+          <i>Reached the end. Checkout articles on </i>
+          <a href="https://medium.com/@aravindballa" target="_blank">
+            Meduim
           </a>{' '}
-          <i>
-            for a complete list of repos and to know what I am working on right now. Also, checkout
-            my developer story at{' '}
-          </i>
-          <a href="https://stackoverflow.com/story/aravindballa" target="_blank">
-            Stack Overflow
-          </a>
-          <i>.</i>
+          <i>or </i>
+          <a href="https://dev.to/aravindballa" target="_blank">
+            Dev.to
+          </a>{' '}
+          <i>that I wrote earlier.</i>
         </StyledSummary>
       </Layout>
     );
   }
 }
 
-export default BlogIndex;
+export default WritingsIndex;
 
 export const pageQuery = graphql`
   query {
@@ -65,7 +58,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false }, type: { ne: "article" } } }
+      filter: { frontmatter: { published: { ne: false }, type: { eq: "article" } } }
     ) {
       edges {
         node {

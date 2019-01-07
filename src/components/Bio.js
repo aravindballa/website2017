@@ -24,15 +24,15 @@ class Bio extends React.Component {
             height: rhythm(2),
           }}
         />
-        <p style={{ color: colors.palered }}>
+        <p style={{ color: colors.green }}>
           By <strong>Aravind Balla</strong> who is a cool human, buiding things for himself, and
           sometimes for others.{' '}
           <a
-            style={{ color: colors.palered }}
-            href="https://twitter.com/aravindballa"
+            style={{ color: colors.green }}
+            href="https://mobile.twitter.com/aravindballa"
             target="_blank"
           >
-            You should follow him on Twitter
+            You should follow him on Twitter!
           </a>
         </p>
       </div>

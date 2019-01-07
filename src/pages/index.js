@@ -18,15 +18,13 @@ class BlogIndex extends React.Component {
         <StyledIndex>
           <Layout location={this.props.location} title={siteTitle}>
             <SEO />
-            <p>
-              <i>Software Developer</i>
-            </p>
+            <p>Software Developer</p>
             <nav>
               <p>
                 <Link to="/projects">Projects</Link>
               </p>
               <p>
-                <a href="https://dev.to/aravindballa">Writings</a>
+                <Link to="/writings">Writings</Link>
               </p>
             </nav>
           </Layout>
