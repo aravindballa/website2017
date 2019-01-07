@@ -47,6 +47,14 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
     }
   }
+
+  blockquote {
+    background: #111;
+    border-left: 4px solid #eee;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-style: italic;
+  }
 `;
 
 export const StyledLayout = styled.div`

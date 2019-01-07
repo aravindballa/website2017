@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
           <Layout location={this.props.location} title={siteTitle}>
             <SEO />
             <p>
-              <i>Software Developer</i>
+              Software Developer
             </p>
             <nav>
               <p>
