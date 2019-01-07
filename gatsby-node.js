@@ -42,6 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
         posts.forEach((post, index) => {
           let previous = index === posts.length - 1 ? null : posts[index + 1].node;
           let next = index === 0 ? null : posts[index - 1].node;
+          // Post in writings should not show up in projects and vice-versa
           if (previous && previous.frontmatter.type !== post.node.frontmatter.type) {
             previous = null;
           }
