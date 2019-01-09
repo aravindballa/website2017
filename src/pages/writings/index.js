@@ -33,7 +33,7 @@ class WritingsIndex extends React.Component {
         <StyledSummary>
           <i>Reached the end. Checkout articles on </i>
           <a href="https://medium.com/@aravindballa" target="_blank">
-            Meduim
+            Medium
           </a>{' '}
           <i>or </i>
           <a href="https://dev.to/aravindballa" target="_blank">
