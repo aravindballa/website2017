@@ -21,8 +21,8 @@ class BlogPostTemplate extends React.Component {
         {post.frontmatter.technologies && (
           <StyledTech>
             Tech used -{' '}
-            {post.frontmatter.technologies.split(',').map(tech => (
-              <span>{tech.trim()}</span>
+            {post.frontmatter.technologies.split(',').map((tech, i) => (
+              <span key={`${tech.trim()}-${i}`}>{tech.trim()}</span>
             ))}
           </StyledTech>
         )}
