@@ -42,9 +42,39 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .gh-card-wrap {
-    text-align: center;
-    iframe {
-      margin: 0;
+    .github-card {
+      .card {
+        margin: 0 auto;
+        max-width: 400px;
+        border-radius: 5px;
+        box-shadow: 2px 5px 10px #222;
+        background: #444;
+        color: #fff;
+        .main {
+          border-bottom: 1px solid #ddd;
+          padding: 0 10px;
+          .user {
+            display: flex;
+            .avatar {
+              margin-top: 10px;
+              border-radius: 50%;
+              border: 3px solid #fff;
+            }
+            .user-details {
+              margin: 10px;
+            }
+
+          }
+        }
+        .stats {
+          padding: 0 10px;
+          margin: 10px;
+          .summary {
+            color: #ddd;
+            font-size: 0.9em;
+          }
+        }
+      }
     }
   }
 
