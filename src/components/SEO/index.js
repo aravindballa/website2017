@@ -42,7 +42,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
 
       const title = postMeta.title || seo.title;
       const description = postMeta.description || seo.description;
-      const image = postImage ? `${seo.siteUrl}${postImage}` : seo.image;
+      const image = postImage ? `${seo.siteUrl}${postImage}` : null;
       const url = postMeta.slug ? normalizeUrl(`${seo.siteUrl}${postMeta.slug}`) : seo.siteUrl;
       const datePublished = isBlogPost ? new Date(postMeta.date).toISOString() : false;
 
@@ -52,21 +52,21 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
             {/* General tags */}
             <title>{isBlogPost ? `${title} | ${seo.title}` : title}</title>
             <meta name="description" content={description} />
-            <meta name="image" content={image} />
+            {image && <meta name="image" content={image} />}
 
             {/* OpenGraph tags */}
             <meta property="og:url" content={url} />
             {isBlogPost ? <meta property="og:type" content="article" /> : null}
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            <meta property="og:image" content={image} />
+            {image && <meta property="og:image" content={image} />}
 
             {/* Twitter Card tags */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content={seo.social.twitter} />
             <meta name="twitter:title" content={title} />
             <meta name="twitter:description" content={description} />
-            <meta name="twitter:image" content={image} />
+            {image && <meta name="twitter:image" content={image} />}
           </Helmet>
           <SchemaOrg
             isBlogPost={isBlogPost}
