@@ -5,7 +5,7 @@ import { scale } from '../utils/typography';
 const StyledFooter = styled.footer`
   text-align: center;
   color: rgba(255, 255, 255, 0.4);
-  ${scale(-0.7)}
+  ${scale(-0.5)}
   a {
     color: rgba(255, 255, 255, 0.4);
   }
