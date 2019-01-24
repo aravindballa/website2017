@@ -1,6 +1,6 @@
 ---
 title: 'Advanced git tips'
-date: '2018-09-23T18:30:00.000Z'
+date: '2018-09-23'
 type: 'article'
 description: 'Some of the advanced git usage and tips for the pros. Things that I have learnt over the years of using git at work.'
 ---

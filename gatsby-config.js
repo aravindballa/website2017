@@ -1,3 +1,5 @@
+const { normalizeUrl } = require('./src/utils/helpers');
+
 module.exports = {
   siteMetadata: {
     title: 'Aravind Balla',
@@ -132,5 +134,18 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => {
+            return {
+              url: normalizeUrl(site.siteMetadata.siteUrl + edge.node.path),
+              changefreq: `daily`,
+              priority: 0.7,
+            }
+          })
+      }
+    }
   ],
 }
