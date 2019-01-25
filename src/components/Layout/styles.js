@@ -106,16 +106,6 @@ export const StyledLayout = styled.div`
   margin-right: auto;
   max-width: ${rhythm(24)};
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
-
-  a {
-    color: ${colors.headings};
-    text-decoration: underline;
-    text-decoration-color: ${colors.red};
-
-    &:hover {
-      color: ${colors.text};
-    }
-  }
 `;
 
 export const StyledCrumb = styled.h2`

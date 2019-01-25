@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import { StyledDate, StyledNextPrev, StyledTech } from '../components/styles/post';
+import { StyledDate, StyledNextPrev, StyledTech, StyledPost } from '../components/styles/post';
 import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
@@ -26,7 +26,7 @@ class BlogPostTemplate extends React.Component {
             ))}
           </StyledTech>
         )}
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <StyledPost dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),

@@ -1,7 +1,7 @@
 ---
 title: Demo Page
 date: '2018-12-04'
-published: false 
+published: false
 type: 'article'
 ---
 

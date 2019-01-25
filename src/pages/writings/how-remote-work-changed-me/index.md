@@ -2,7 +2,7 @@
 title: 'How remote work changed me'
 date: '2019-01-25'
 type: 'article'
-published: true 
+published: true
 description: 'How can remote work change my life. These are some advantages I take from remote work and now I am happy in life.'
 tags: 'life'
 ---
@@ -41,7 +41,7 @@ Travelling to other cities has been on my checklist from long ago and I will che
 
 ## Free time
 
-I can now attend conferences and speak at meetups. I learned a lot by attending conferences and events. I should start writing and publishing about those experiences too. 
+I can now attend conferences and speak at meetups. I learned a lot by attending conferences and events. I should start writing and publishing about those experiences too.
 
 ![aravind balla talk seminar about react](IMG-20180401-WA0013-c58717b1-057d-40eb-81b5-fd90cdd6176f.jpg)
 
@@ -49,7 +49,7 @@ Also, I love sharing the things I've learnt, so I speak at few meetups.
 
 > Those who know, do. Those who understand, teach.
 
-Not only this, I now have time for hobbies. I have been learning [German](https://www.duolingo.com/aravindballa) and I am loving it. *Vershest du Duestch?*
+Not only this, I now have time for hobbies. I have been learning [German](https://www.duolingo.com/aravindballa) and I am loving it. _Vershest du Duestch?_
 
 I read books in the evening sometimes. This year, I want to do it more. One book a month is the goal. This is the progress till now - [Goodreads](https://www.goodreads.com/user/show/35045477-aravind-balla).
 
