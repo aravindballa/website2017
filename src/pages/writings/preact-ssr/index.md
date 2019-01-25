@@ -1,6 +1,6 @@
 ---
 title: '(P)reacting on the server side'
-date: '2018-09-30T18:30:00.000Z'
+date: '2018-09-30'
 type: 'article'
 description: 'We use Preact and Node to build server side rendered web pages. Blazing fast webpages can be built using Preact.'
 ---

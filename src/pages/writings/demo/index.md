@@ -1,6 +1,6 @@
 ---
 title: Demo Page
-date: '2019-01-04T06:00:01.069Z'
+date: '2018-12-04'
 published: false
 type: 'article'
 ---

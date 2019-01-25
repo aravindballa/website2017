@@ -35,3 +35,15 @@ export const StyledTech = styled.div`
     }
   }
 `;
+
+export const StyledPost = styled.div`
+  a {
+    color: ${colors.headings};
+    text-decoration: underline;
+    text-decoration-color: ${colors.red};
+
+    &:hover {
+      color: ${colors.text};
+    }
+  }
+`;
