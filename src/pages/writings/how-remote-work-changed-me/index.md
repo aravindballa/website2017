@@ -27,13 +27,13 @@ Our team is remote. The main pro, and also a con, of a completely remote team is
 
 ## Flexibility - location 🏕
 
-No office to go to. I go to a co working space in the city centre and work from there. I could not function alone from home for more than a month. To have some people around, I go to that space. I met some amazing people there. Co-working spaces have have diverse people. From startup founders to designers to architects I've met them all. Its good to talk to them about the work they do and listen to the problems they face.
+No office to go to. I go to a co working space in the city centre and work from there. I could not function alone from home for more than a month. I go to that space to have some people around. I met some amazing people there. Co-working spaces have have diverse people. From startup founders to designers to architects I've met them all. Its good to talk to them about the work they do and listen to the problems they face.
 
 ![an image of co working space](IMG_20190124_214712-01-67f0248f-0376-4153-a6dc-781dfec3be43.jpeg)
 
 I visit my family often. I go home during some weekends and extend my stay there for few days.
 
-I work from coffee shops if I need a change and I am getting to like it. I am planning to do it more often. I get more work done in a coffee shop. Maybe the aroma makes me more productive. 😉
+I work from coffee shops if I need some change and I am getting to like it. I am planning to do it more often. I get more work done in a coffee shop. Maybe the aroma makes me more productive. 😉
 
 (Also, I can wear anything I want.)
 
