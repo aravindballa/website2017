@@ -19,16 +19,13 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-mdx`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        defaultLayouts: {
+          default: require.resolve('./src/templates/page.js')
+        },
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -48,9 +45,42 @@ module.exports = {
           {
             resolve: require.resolve('./plugins/remark-embedder')
           }
-        ],
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content`,
+        name: 'content',
       },
     },
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           maxWidth: 590,
+    //           quality: 80,
+    //         },
+    //       },
+    //       {
+    //         resolve: `gatsby-remark-responsive-iframe`,
+    //         options: {
+    //           wrapperStyle: `margin-bottom: 1.0725rem`,
+    //         },
+    //       },
+    //       'gatsby-remark-prismjs',
+    //       'gatsby-remark-copy-linked-files',
+    //       'gatsby-remark-smartypants',
+    //       {
+    //         resolve: require.resolve('./plugins/remark-embedder')
+    //       }
+    //     ],
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -59,7 +89,6 @@ module.exports = {
         trackingId: `UA-65268954-3`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -81,60 +110,60 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  limit: 1000,
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                  filter: {frontmatter: { published: { ne: false } }}
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields { slug }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: "/rss.xml",
-            title: "Aravindballa RSS Feed",
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title
+    //             description
+    //             siteUrl
+    //             site_url: siteUrl
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       {
+    //         serialize: ({ query: { site, allMarkdownRemark } }) => {
+    //           return allMarkdownRemark.edges.map(edge => {
+    //             return Object.assign({}, edge.node.frontmatter, {
+    //               description: edge.node.excerpt,
+    //               date: edge.node.frontmatter.date,
+    //               url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+    //               custom_elements: [{ "content:encoded": edge.node.html }],
+    //             })
+    //           })
+    //         },
+    //         query: `
+    //           {
+    //             allMarkdownRemark(
+    //               limit: 1000,
+    //               sort: { order: DESC, fields: [frontmatter___date] },
+    //               filter: {frontmatter: { published: { ne: false } }}
+    //             ) {
+    //               edges {
+    //                 node {
+    //                   excerpt
+    //                   html
+    //                   fields { slug }
+    //                   frontmatter {
+    //                     title
+    //                     date
+    //                   }
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         `,
+    //         output: "/rss.xml",
+    //         title: "Aravindballa RSS Feed",
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {

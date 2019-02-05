@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../../components/Layout';
-import { StyledProject, StyledSummary } from '../../components/styles/projects';
-import SEO from '../../components/SEO';
+import Layout from '../components/Layout';
+import { StyledProject, StyledSummary } from '../components/styles/projects';
+import SEO from '../components/SEO';
 
-class WritingsIndex extends React.Component {
+class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const siteDescription = data.site.siteMetadata.description;
-    const posts = data.allMarkdownRemark.edges;
+    const posts = data.allMdx.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO frontmatter={{ title: 'Writings', slug: '/writings' }} />
+      <Layout location={this.props.location}>
+        <SEO frontmatter={{ title: 'Projects', slug: '/projects' }} />
+        <p>
+          I love building things. 👷 These are the stuff I built. <br />
+          Some for fun. 🤸🏻‍♂️ Some for productivity! 👨🏻‍💻
+        </p>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
@@ -31,34 +33,31 @@ class WritingsIndex extends React.Component {
         })}
         <hr />
         <StyledSummary>
-          <i>Reached the end. Checkout articles on </i>
-          <a href="https://medium.com/@aravindballa" target="_blank">
-            Medium
+          <i>Follow me on </i>
+          <a href="https://github.com/aravindballa" target="_blank">
+            Github
           </a>{' '}
-          <i>or </i>
-          <a href="https://dev.to/aravindballa" target="_blank">
-            Dev.to
-          </a>{' '}
-          <i>that I wrote earlier.</i>
+          <i>
+            for a complete list of repos and to know what I am working on right now. Also, checkout
+            my developer story at{' '}
+          </i>
+          <a href="https://stackoverflow.com/story/aravindballa" target="_blank">
+            Stack Overflow
+          </a>
+          <i>.</i>
         </StyledSummary>
       </Layout>
     );
   }
 }
 
-export default WritingsIndex;
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false }, type: { eq: "article" } } }
+      filter: { frontmatter: { published: { ne: false }, type: { ne: "article" } } }
     ) {
       edges {
         node {
