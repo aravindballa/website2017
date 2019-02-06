@@ -57,7 +57,7 @@ export const pageQuery = graphql`
   query {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false }, type: { ne: "article" } } }
+      filter: { frontmatter: { published: { ne: false }, type: { eq: null } } }
     ) {
       edges {
         node {
