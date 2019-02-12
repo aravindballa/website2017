@@ -1,30 +1,18 @@
 const { URL } = require('url');
 
 function shouldTransform(string) {
-  return getUrl(string) !== null;
+  return isValid(string) !== null;
 }
 
-function getUrl(string) {
+function isValid(string) {
   if (!string.includes('github')) {
     return null;
   }
-  if (!string.startsWith('http')) {
-    string = `https://${string}`;
-  }
-  let url;
-  try {
-    url = new URL(string);
-  } catch (error) {
-    return null;
-  }
-  if (!url.host.endsWith('github.com')) {
-    return null;
-  }
-  return url;
+  return string.match(/^github\//);
 }
 
 function getGithubHTML(string) {
-  const matcher = string.match(/https:\/\/github.com\/(.*?)\/(.*)$/);
+  const matcher = string.match(/^github\/(.*?)\/(.*)$/);
   if (matcher) {
     return `<div class="gh-card-wrap"><div class="github-card" data-user="${
       matcher[1]

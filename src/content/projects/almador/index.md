@@ -7,7 +7,7 @@ link: ''
 description: 'A personal facebook messenger bot which logs my work, inspires me, and sends messages on my behalf. It doesnot hesitate in answering simple and funny questions too.'
 ---
 
-https://github.com/aravindballa/almador
+github/aravindballa/almador
 
 ![Almador](./almador.png)
 

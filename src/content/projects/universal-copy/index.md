@@ -7,7 +7,7 @@ link: ''
 description: 'A cross platform application which helps us copy text from one device to another. This is not into production yet. But, it will be sooner.'
 ---
 
-https://github.com/dailywageworkers/crosstalk-chrome
+github/dailywageworkers/crosstalk-chrome
 
 I like building things that make me more productive. Things which support me in the work I do. One of them is Universal Copy.
 

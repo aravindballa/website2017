@@ -42,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .gh-card-wrap {
+    margin-top: 20px;
     .github-card {
       .card {
         margin: 0 auto;

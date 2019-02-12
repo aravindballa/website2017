@@ -7,7 +7,7 @@ link: 'https://www.npmjs.com/package/gister-cli'
 description: 'A simple node package which creates GitHub Gist from files via command line.'
 ---
 
-https://github.com/aravindballa/node-gister
+github/aravindballa/node-gister
 
 I write articles on [Medium](https://medium.com/@aravindballa) generally. And most of them are technical one which sometimes required code samples
 for better understanding. So I upload Gists and copy paste that URL on to Medium. It gives a nice formatted code display.

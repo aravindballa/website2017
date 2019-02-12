@@ -1,5 +1,3 @@
-import CodeBlock from "./CodeBlock";
+import CodeBlock from './CodeBlock';
 
-export {
-  CodeBlock
-}
+export { CodeBlock };

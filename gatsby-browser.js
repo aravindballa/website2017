@@ -1,5 +1,3 @@
-import './src/utils/theme.css';
-
 export const onRouteUpdate = () => {
   // Load JS required for github cards
   if (document.querySelector('.github-card') !== null) {

@@ -7,7 +7,7 @@ link: ''
 description: 'New Tab extension for chrome which displays me my live age. It keeps incrementing for every second. A quick one!'
 ---
 
-https://github.com/aravindballa/live-age-chrome
+github/aravindballa/live-age-chrome
 
 ![LiveAgeTab](./live-age-tab.png)
 

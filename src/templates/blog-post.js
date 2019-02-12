@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import MDXRenderer from "gatsby-mdx/mdx-renderer";
-import { withMDXScope } from 'gatsby-mdx/context'
+import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 
 import Bio from '../components/Bio';
 import SEO from '../components/SEO';
@@ -14,10 +13,8 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx;
     const { previous, next } = this.props.pageContext;
 
-    console.log(this.props);
-
     return (
-      <Layout location={location}>
+      <Layout location={this.props.location}>
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
         <StyledDate>{post.frontmatter.date}</StyledDate>
@@ -64,7 +61,7 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostById($slug: String!) {
-    mdx(fields: {slug: { eq: $slug }}) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt
       code {

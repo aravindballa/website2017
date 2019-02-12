@@ -1,7 +1,9 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import { MDXProvider } from '@mdx-js/tag';
 
 import Footer from '../Footer';
+import mdxComponents from '../Mdx';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 
 const renderBreadcrumb = pathname => {
@@ -29,7 +31,7 @@ const Layout = ({ children, location }) => (
       const title = data.site.siteMetadata.title;
       const rootPath = `${__PATH_PREFIX__}/`;
       let header;
-      if (location.pathname === rootPath) {
+      if (location && location.pathname === rootPath) {
         header = (
           <h1>
             <Link to={'/'}>{title}</Link>
@@ -51,7 +53,7 @@ const Layout = ({ children, location }) => (
           <StyledLayout>
             <GlobalStyle />
             {header}
-            {children}
+            <MDXProvider components={mdxComponents}>{children}</MDXProvider>
           </StyledLayout>
           {location.pathname !== rootPath && <Footer />}
         </React.Fragment>
