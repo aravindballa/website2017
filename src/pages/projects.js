@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../../components/Layout';
-import { StyledProject, StyledSummary } from '../../components/styles/projects';
-import SEO from '../../components/SEO';
+import Layout from '../components/Layout';
+import { StyledProject, StyledSummary } from '../components/styles/projects';
+import SEO from '../components/SEO';
 
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const siteDescription = data.site.siteMetadata.description;
-    const posts = data.allMarkdownRemark.edges;
+    const posts = data.allMdx.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location}>
         <SEO frontmatter={{ title: 'Projects', slug: '/projects' }} />
         <p>
           I love building things. 👷 These are the stuff I built. <br />
@@ -57,15 +55,9 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false }, type: { ne: "article" } } }
+      filter: { frontmatter: { published: { ne: false }, type: { eq: null } } }
     ) {
       edges {
         node {

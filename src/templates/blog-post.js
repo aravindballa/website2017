@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 
 import Bio from '../components/Bio';
-import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import Layout from '../components/Layout';
 import { StyledDate, StyledNextPrev, StyledTech, StyledPost } from '../components/styles/post';
 import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
+    const post = this.props.data.mdx;
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location}>
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
         <StyledDate>{post.frontmatter.date}</StyledDate>
@@ -26,7 +26,9 @@ class BlogPostTemplate extends React.Component {
             ))}
           </StyledTech>
         )}
-        <StyledPost dangerouslySetInnerHTML={{ __html: post.html }} />
+        <StyledPost>
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </StyledPost>
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -58,17 +60,13 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query BlogPostById($slug: String!) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt
-      html
+      code {
+        body
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

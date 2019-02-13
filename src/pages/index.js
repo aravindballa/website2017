@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 import { StyledIndex } from '../components/styles/index-page';

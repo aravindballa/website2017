@@ -7,7 +7,7 @@ link: 'http://mrnd.herokuapp.com'
 description: 'A leaderboard built using Angular and node for MRND. It contains the stats of the students and their progress on SPOJ problems.'
 ---
 
-https://github.com/aravindballa/MRNDLeaderboard
+github/aravindballa/MRNDLeaderboard
 
 ![leaderboard](./mrnd-leaderboard.png)
 

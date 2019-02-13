@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../../components/Layout';
-import { StyledProject, StyledSummary } from '../../components/styles/projects';
-import SEO from '../../components/SEO';
+import Layout from '../components/Layout';
+import { StyledProject, StyledSummary } from '../components/styles/projects';
+import SEO from '../components/SEO';
 
 class WritingsIndex extends React.Component {
   render() {
     const { data } = this.props;
-    const siteTitle = data.site.siteMetadata.title;
-    const siteDescription = data.site.siteMetadata.description;
-    const posts = data.allMarkdownRemark.edges;
+    const posts = data.allMdx.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location}>
         <SEO frontmatter={{ title: 'Writings', slug: '/writings' }} />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
@@ -50,13 +48,7 @@ export default WritingsIndex;
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMarkdownRemark(
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { published: { ne: false }, type: { eq: "article" } } }
     ) {
