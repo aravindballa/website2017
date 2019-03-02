@@ -100,6 +100,13 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.2em;
     font-style: italic;
   }
+
+  :not(pre) > code {
+    border-radius: .3em;
+    color: #EB697F;
+    padding: .1em;
+    background: #2b2b2b;
+  }
 `;
 
 export const StyledLayout = styled.div`
