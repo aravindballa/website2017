@@ -32,6 +32,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
+              backgroundColor: '#141414',
               maxWidth: 590,
               quality: 80,
             },
@@ -50,7 +51,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/content`,
         name: 'content',
       },
     },
