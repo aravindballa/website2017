@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
+import Img from 'gatsby-image';
 
 import Bio from '../components/Bio';
 import SEO from '../components/SEO';
@@ -27,6 +28,7 @@ class BlogPostTemplate extends React.Component {
           </StyledTech>
         )}
         <StyledPost>
+          {post.frontmatter.banner && <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />}
           <MDXRenderer>{post.code.body}</MDXRenderer>
         </StyledPost>
         <hr
@@ -63,6 +65,11 @@ export const pageQuery = graphql`
   query BlogPostById($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {
       id
+      parent {
+        ... on File {
+          sourceInstanceName
+        }
+      }
       excerpt
       code {
         body
@@ -72,6 +79,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         technologies
+        banner {
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
       }
       fields {
         slug

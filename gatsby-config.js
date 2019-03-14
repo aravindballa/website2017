@@ -8,7 +8,7 @@ module.exports = {
     description: 'Discoveries and rants of a developer while developing stuff',
     siteUrl: 'https://aravindballa.com/',
     social: {
-      twitter: 'aravindballa'
+      twitter: 'aravindballa',
     },
     organization: {
       name: 'Aravind Balla',
@@ -19,23 +19,32 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content`,
+        name: 'content',
+      },
+    },
+    {
       resolve: `gatsby-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/page.js')
+          default: require.resolve('./src/templates/page.js'),
         },
         gatsbyRemarkPlugins: [
-          {
-            resolve: require.resolve('./plugins/remark-embedder')
-          },
+          { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: `gatsby-remark-images`,
             options: {
               backgroundColor: '#141414',
               maxWidth: 590,
               quality: 80,
+              sizeByPixelDensity: true,
             },
+          },
+          {
+            resolve: require.resolve('./plugins/remark-embedder'),
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
@@ -43,20 +52,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          { resolve: 'gatsby-remark-copy-linked-files' },
-          { resolve: 'gatsby-remark-smartypants' }
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content`,
-        name: 'content',
+          { resolve: 'gatsby-remark-smartypants' },
+        ],
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -107,9 +108,9 @@ module.exports = {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: normalizeUrl(site.siteMetadata.siteUrl + edge.node.fields.slug),
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
-              })
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                });
+              });
             },
             query: `
               {
@@ -132,8 +133,8 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Aravindballa RSS Feed",
+            output: '/rss.xml',
+            title: 'Aravindballa RSS Feed',
           },
         ],
       },
@@ -147,9 +148,9 @@ module.exports = {
               url: normalizeUrl(site.siteMetadata.siteUrl + edge.node.path),
               changefreq: `daily`,
               priority: 0.7,
-            }
-          })
-      }
-    }
+            };
+          }),
+      },
+    },
   ],
-}
+};
