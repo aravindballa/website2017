@@ -9,7 +9,7 @@ description: 'A personal facebook messenger bot which logs my work, inspires me,
 
 github/aravindballa/almador
 
-![Almador](./almador.png)
+![](./almador.png)
 
 This is my personal assistant. Period. It is a Facebook Messenger Bot.
 

@@ -1,5 +1,5 @@
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -7,12 +7,18 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         allMdx(
-          sort: { fields: [frontmatter___date], order: DESC },
-          limit: 1000,
-          filter: {frontmatter: { published: { ne: false } }}
-         ) {
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+          filter: { frontmatter: { published: { ne: false } } }
+        ) {
           edges {
             node {
+              parent {
+                ... on File {
+                  name
+                  sourceInstanceName
+                }
+              }
               fields {
                 slug
               }
@@ -21,12 +27,15 @@ exports.createPages = async ({ graphql, actions }) => {
                 published
                 type
               }
+              code {
+                scope
+              }
             }
           }
         }
       }
     `
-  )
+  );
 
   if (result.errors) {
     console.log(result.errors);
@@ -51,23 +60,28 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next
+        next,
       },
     });
   });
-}
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
+    createNodeField({
+      name: 'banner',
+      node,
+      value: node.frontmatter.banner,
+    });
   }
-}
+};
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -75,5 +89,5 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: { $components: path.resolve(__dirname, 'src/components') },
     },
-  })
-}
+  });
+};

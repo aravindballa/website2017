@@ -37,6 +37,9 @@ export const StyledTech = styled.div`
 `;
 
 export const StyledPost = styled.div`
+  .gatsby-image-wrapper {
+    margin-bottom: 20px;
+  }
   a {
     color: ${colors.headings};
     text-decoration: underline;
