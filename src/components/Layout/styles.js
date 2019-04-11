@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: ${colors.background};
     color: ${colors.text};
+    font-display: auto;
   }
 
   h1,h2,h3 {
