@@ -5,6 +5,7 @@ import { MDXProvider } from '@mdx-js/tag';
 import Footer from '../Footer';
 import mdxComponents from '../Mdx';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
+import { AravindBalla } from '../Icons';
 
 const renderBreadcrumb = pathname => {
   if (pathname.match(/projects/)) {
@@ -34,7 +35,10 @@ const Layout = ({ children, location }) => (
       if (location && location.pathname === rootPath) {
         header = (
           <h1>
-            <Link to={'/'}>{title}</Link>
+            <Link to={'/'}>
+              <AravindBalla />
+            </Link>
+            <span style={{ display: 'none' }}>{title}</span>
           </h1>
         );
       } else {

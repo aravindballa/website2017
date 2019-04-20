@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1,h2,h3 {
+    margin-top: ${rhythm(1)};
     color: ${colors.headings};
       a {
       box-shadow: none;
