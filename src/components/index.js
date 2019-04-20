@@ -1,3 +1,4 @@
 import CodeBlock from './CodeBlock';
+import RandomImage from './RandomImage';
 
-export { CodeBlock };
+export { CodeBlock, RandomImage };
