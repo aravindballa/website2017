@@ -1,6 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 
 import Footer from '../Footer';
 import mdxComponents from '../Mdx';
@@ -57,7 +57,9 @@ const Layout = ({ children, location }) => (
           <StyledLayout>
             <GlobalStyle />
             {header}
-            <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+            <MDXProvider components={mdxComponents}>
+              <React.Fragment>{children}</React.Fragment>
+            </MDXProvider>
           </StyledLayout>
           {location.pathname !== rootPath && <Footer />}
         </React.Fragment>

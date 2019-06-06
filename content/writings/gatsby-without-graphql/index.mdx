@@ -73,7 +73,7 @@ Next, we create a template which will get the data from the JSON and render it t
 // src/templates/page.js
 import React from 'react';
 
-export default props => {
+const PageTemplate = props => {
   const { title = null, paragraphs = null } = props.pageContext;
 
   return (
@@ -89,6 +89,8 @@ export default props => {
     </React.Fragment>
   );
 };
+
+export default PageTemplate;
 ```
 
 A very naive and basic React component which gets `title` and `paragraphs` in the `pageContext` and it renders them. We will get to how the data is passed to `pageContext` in a while.
