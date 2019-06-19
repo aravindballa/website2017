@@ -34,7 +34,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
 
       const title = postMeta.title || seo.title;
       const description = postMeta.description || seo.description;
-      const image = postImage ? `${seo.siteUrl}${postImage}` : null;
+      const image = postImage ? normalizeUrl(`${seo.siteUrl}${postImage}`) : null;
       const url = postMeta.slug ? normalizeUrl(`${seo.siteUrl}${postMeta.slug}`) : seo.siteUrl;
       const datePublished = isBlogPost ? new Date(postMeta.date).toISOString() : false;
 
