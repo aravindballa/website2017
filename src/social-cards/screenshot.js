@@ -23,7 +23,6 @@ const getHtml = title => `
         width: 100vw;
         background: #151515;
         color: #ffffff;
-        border-radius: 6vw;
       }
       .card .wrapper {
         height: -webkit-fill-available;
