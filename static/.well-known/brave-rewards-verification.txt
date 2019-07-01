@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: aravindballa.com
+Token: 9ea989a160fc44b095116c8e8011e1199fa3b7bc10c728f91a74ce6fac3c7197
