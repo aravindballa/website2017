@@ -21,7 +21,7 @@ const Footer = () => (
       .
       <br />
       <a href="mailto:bsaaravind+website@gmail.com">mail</a> |{' '}
-      <a href="https://mobile.twitter.com/aravindballa">twitter</a> |{' '}
+      <a href="https://twitter.com/aravindballa">twitter</a> |{' '}
       <a href="https://aravindballa.com/rss.xml">rss</a>
     </p>
   </StyledFooter>

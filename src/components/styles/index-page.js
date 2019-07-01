@@ -20,6 +20,10 @@ export const StyledIndex = styled.div`
     text-transform: italicise;
   }
 
+  strong {
+    color: white;
+  }
+
   nav {
     display: flex;
     align-items: center;
