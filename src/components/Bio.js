@@ -29,7 +29,7 @@ class Bio extends React.Component {
           sometimes for others.{' '}
           <a
             style={{ color: colors.green }}
-            href="https://mobile.twitter.com/aravindballa"
+            href="https://twitter.com/aravindballa"
             target="_blank"
           >
             You should hit him up on Twitter!
