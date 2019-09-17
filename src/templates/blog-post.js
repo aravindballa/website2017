@@ -6,7 +6,13 @@ import Img from 'gatsby-image';
 import Bio from '../components/Bio';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
-import { StyledDate, StyledNextPrev, StyledTech, StyledPost } from '../components/styles/post';
+import {
+  StyledDate,
+  StyledNextPrev,
+  StyledTech,
+  StyledPost,
+  StyledImgCaption,
+} from '../components/styles/post';
 import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
@@ -33,6 +39,9 @@ class BlogPostTemplate extends React.Component {
         )}
         <StyledPost>
           {post.frontmatter.banner && <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />}
+          {post.frontmatter.bannercaption && (
+            <StyledImgCaption>{post.frontmatter.bannercaption}</StyledImgCaption>
+          )}
           <MDXRenderer>{post.code.body}</MDXRenderer>
         </StyledPost>
         <hr
@@ -90,6 +99,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        bannercaption
       }
       fields {
         slug

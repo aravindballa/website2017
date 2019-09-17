@@ -50,3 +50,11 @@ export const StyledPost = styled.div`
     }
   }
 `;
+
+export const StyledImgCaption = styled.div`
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-style: italic;
+  opacity: 0.4;
+  ${scale(-1 / 5)}
+`;
