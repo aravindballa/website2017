@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { StyledProject, StyledSummary } from '../components/styles/projects';
+import { StyledSummary, StyledArticle } from '../components/styles/projects';
 import SEO from '../components/SEO';
 
 class WritingsIndex extends React.Component {
@@ -16,15 +16,17 @@ class WritingsIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
-            <StyledProject key={node.fields.slug}>
+            <StyledArticle key={node.fields.slug}>
               <h3>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
-              <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </StyledProject>
+              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                <small>Read -></small>
+              </Link>
+            </StyledArticle>
           );
         })}
         <hr />
@@ -59,7 +61,6 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
             title
             published
           }

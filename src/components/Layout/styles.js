@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: none;
       color: inherit;
 
-      &:hover: {
+      &:hover {
         text-decoration: none;
       }
     }
@@ -108,6 +108,15 @@ export const GlobalStyle = createGlobalStyle`
     color: #EB697F;
     padding: .1em;
     background: #2b2b2b;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
 

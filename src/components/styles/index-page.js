@@ -28,5 +28,7 @@ export const StyledIndex = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
   }
 `;
