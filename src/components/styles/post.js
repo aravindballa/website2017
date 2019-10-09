@@ -37,6 +37,8 @@ export const StyledTech = styled.div`
 `;
 
 export const StyledPost = styled.div`
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
   .gatsby-image-wrapper {
     margin-bottom: 20px;
   }

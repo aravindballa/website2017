@@ -28,7 +28,6 @@ class BlogPostTemplate extends React.Component {
           postImage={post.fields.socialImage.childImageSharp.original.src}
         />
         <h1>{post.frontmatter.title}</h1>
-        <StyledDate>{post.frontmatter.date}</StyledDate>
         {post.frontmatter.technologies && (
           <StyledTech>
             Tech used -{' '}
