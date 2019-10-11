@@ -8,10 +8,13 @@ import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 import { AravindBalla } from '../Icons';
 
 const renderBreadcrumb = pathname => {
+  // TODO: refactor this!
   if (pathname.match(/projects/)) {
     return <Link to={'/projects'}>projects</Link>;
   } else if (pathname.match(/writings/)) {
     return <Link to={'/writings'}>writings</Link>;
+  } else if (pathname.match(/talks/)) {
+    return <Link to={'/'}>talks</Link>;
   } else {
     return '';
   }
