@@ -26,7 +26,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
@@ -53,6 +53,7 @@ module.exports = {
             },
           },
           { resolve: 'gatsby-remark-smartypants' },
+          { resolve: 'gatsby-remark-embedder' },
         ],
       },
     },
