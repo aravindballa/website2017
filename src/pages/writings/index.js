@@ -1,9 +1,17 @@
+// ### Featured
+
+// [How Remote work changed me](/writings/how-remote-work-changed-me/)
+
+// ### Personal Favourites
+
+// - [Fetching things at once](/writings/fetching-things-at-once)
+
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
-import { StyledSummary, StyledArticle } from '../components/styles/projects';
-import SEO from '../components/SEO';
+import Layout from '../../components/Layout';
+import { StyledSummary, StyledArticle } from '../../components/styles/projects';
+import SEO from '../../components/SEO';
 
 class WritingsIndex extends React.Component {
   render() {
@@ -13,6 +21,7 @@ class WritingsIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <SEO frontmatter={{ title: 'Writings', slug: '/writings' }} />
+        <h2>Featured</h2>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
@@ -29,18 +38,6 @@ class WritingsIndex extends React.Component {
             </StyledArticle>
           );
         })}
-        <hr />
-        <StyledSummary>
-          <i>Reached the end. Checkout articles on </i>
-          <a href="https://medium.com/@aravindballa" target="_blank">
-            Medium
-          </a>{' '}
-          <i>or </i>
-          <a href="https://dev.to/aravindballa" target="_blank">
-            Dev.to
-          </a>{' '}
-          <i>that I wrote earlier.</i>
-        </StyledSummary>
       </Layout>
     );
   }
@@ -52,7 +49,9 @@ export const pageQuery = graphql`
   query {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { published: { ne: false }, type: { eq: "article" } } }
+      filter: {
+        frontmatter: { published: { ne: false }, type: { eq: "article" }, featured: { eq: true } }
+      }
     ) {
       edges {
         node {

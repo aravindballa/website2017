@@ -125,6 +125,7 @@ export const StyledLayout = styled.div`
   margin-right: auto;
   max-width: 800px;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  ${({ isIndex }) => (isIndex ? '' : `min-height: calc(100vh - 88px);`)}
 `;
 
 export const StyledCrumb = styled.h2`

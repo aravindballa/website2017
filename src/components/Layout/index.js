@@ -57,7 +57,7 @@ const Layout = ({ children, location }) => (
       }
       return (
         <React.Fragment>
-          <StyledLayout>
+          <StyledLayout isIndex={location.pathname === rootPath}>
             <GlobalStyle />
             {header}
             <MDXProvider components={mdxComponents}>
