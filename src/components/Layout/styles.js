@@ -123,7 +123,7 @@ export const GlobalStyle = createGlobalStyle`
 export const StyledLayout = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: ${rhythm(24)};
+  max-width: 800px;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
 `;
 
