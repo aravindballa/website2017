@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
-import { StyledSummary, StyledArticle } from '../components/styles/projects';
-import SEO from '../components/SEO';
+import Layout from '../../components/Layout';
+import { StyledSummary, StyledProject } from '../../components/styles/projects';
+import SEO from '../../components/SEO';
+import FeaturedPost from '../../components/FeaturedPost';
 
 class WritingsIndex extends React.Component {
   render() {
@@ -13,20 +14,26 @@ class WritingsIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <SEO frontmatter={{ title: 'Writings', slug: '/writings' }} />
+        {posts
+          .filter(({ node }) => node.frontmatter.featured)
+          .map(({ node }) => (
+            <FeaturedPost key={node.fields.slug} link={node.fields.slug}>
+              <h3>{node.frontmatter.title}</h3>
+              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            </FeaturedPost>
+          ))}
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
           return (
-            <StyledArticle key={node.fields.slug}>
+            <StyledProject key={node.fields.slug}>
               <h3>
                 <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
+              <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                <small>Read -></small>
-              </Link>
-            </StyledArticle>
+            </StyledProject>
           );
         })}
         <hr />
@@ -63,6 +70,8 @@ export const pageQuery = graphql`
           frontmatter {
             title
             published
+            featured
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }

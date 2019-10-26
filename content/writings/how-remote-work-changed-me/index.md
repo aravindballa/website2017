@@ -5,6 +5,7 @@ type: 'article'
 published: true
 description: 'How can remote work change my life. These are some advantages I take from remote work and now I am happy in life.'
 tags: 'life'
+featured: true
 ---
 
 Now that I don't work from the same concrete place every time, I am really loving it. I rent a desk at a co-working space nearby and often go there. Sometimes I work from home when I have to do my daily chores, and sometimes from nearby coffee shops.

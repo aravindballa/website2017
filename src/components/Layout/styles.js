@@ -96,18 +96,20 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   blockquote {
-    background: #111;
-    border-left: 4px solid #eee;
-    padding-left: 20px;
+    background: ${colors.gray700};
+    border-left: 4px solid ${colors.text};
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 10px;
     font-size: 1.2em;
     font-style: italic;
   }
 
   :not(pre) > code {
     border-radius: .3em;
-    color: #EB697F;
+    color: ${colors.palered};
     padding: .1em;
-    background: #2b2b2b;
+    background: ${colors.gray700};
   }
 
   @keyframes fadeIn {
@@ -125,6 +127,7 @@ export const StyledLayout = styled.div`
   margin-right: auto;
   max-width: 800px;
   padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
+  ${({ isIndex }) => (isIndex ? '' : `min-height: calc(100vh - 88px);`)}
 `;
 
 export const StyledCrumb = styled.h2`
