@@ -53,9 +53,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 published
                 type
               }
-              code {
-                scope
-              }
             }
           }
         }
