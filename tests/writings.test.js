@@ -5,6 +5,8 @@ const { join } = require('path');
 let browser;
 let page;
 
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
 const dirs = p => readdirSync(p).filter(f => statSync(join(p, f)).isDirectory());
 const slugs = dirs('./content/writings').filter(s => s !== 'demo');
 
@@ -22,7 +24,8 @@ afterAll(async () => {
 describe('Writings', () => {
   for (const slug of slugs) {
     test(`visually looks correct: ${slug}`, async () => {
-      await page.goto(`http://localhost:8000/writings/${slug}`, { waitUntil: 'networkidle0' });
+      await page.goto(`http://localhost:8000/writings/${slug}`);
+      await sleep(2000);
       const image = await page.screenshot({ fullPage: true });
       expect(image).toMatchImageSnapshot();
     }, 30000);
