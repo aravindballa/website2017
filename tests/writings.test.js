@@ -15,6 +15,10 @@ console.log(slugs);
 beforeAll(async () => {
   browser = await puppeteer.launch();
   page = await browser.newPage();
+  await page.setViewport({
+    width: 1440,
+    height: 1080,
+  });
 });
 
 afterAll(async () => {
@@ -24,7 +28,7 @@ afterAll(async () => {
 describe('Writings', () => {
   for (const slug of slugs) {
     test(`visually looks correct: ${slug}`, async () => {
-      await page.goto(`http://localhost:8000/writings/${slug}`);
+      await page.goto(`http://localhost:5000/writings/${slug}`);
       await sleep(2000);
       const image = await page.screenshot({ fullPage: true });
       expect(image).toMatchImageSnapshot();
