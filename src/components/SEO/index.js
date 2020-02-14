@@ -46,6 +46,10 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
             <meta name="description" content={description} />
             {image && <meta name="image" content={image} />}
 
+            {/* Webmentions */}
+            <link rel="webmention" href="https://webmention.io/aravindballa.com/webmention" />
+            <link rel="pingback" href="https://webmention.io/aravindballa.com/xmlrpc" />
+
             {/* OpenGraph tags */}
             <meta property="og:url" content={url} />
             {isBlogPost ? <meta property="og:type" content="article" /> : null}
