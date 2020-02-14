@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
 const Footer = () => (
   <StyledFooter>
     <p>
-      Copyright whenever. This is site is{' '}
+      Copyright whenever. This site is{' '}
       <a href="https://github.com/aravindballa/website2017" target="_blank">
         opensource
       </a>
