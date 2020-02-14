@@ -20,8 +20,8 @@ const Footer = () => (
       </a>
       .
       <br />
-      <a href="mailto:bsaaravind+website@gmail.com">mail</a> |{' '}
-      <a href="https://twitter.com/aravindballa">twitter</a> |{' '}
+      <a href="mailto:bsaaravind+website@gmail.com" rel="me">mail</a> |{' '}
+      <a href="https://twitter.com/aravindballa" rel="me">twitter</a> |{' '}
       <a href="https://aravindballa.com/rss.xml">rss</a>
     </p>
   </StyledFooter>
