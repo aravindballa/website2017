@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { rhythm, scale } from '../../utils/typography';
-import { colors } from '../../utils/theme';
+import { colors, themeVariables } from '../../utils/theme';
 
 /**
  * Global styles are placed here instead of gatsby-browser.js
@@ -8,10 +8,13 @@ import { colors } from '../../utils/theme';
  * and can change the theme easyly.
  */
 export const GlobalStyle = createGlobalStyle`
+  ${themeVariables}
+
   body {
     background: ${colors.background};
     color: ${colors.text};
     font-display: auto;
+    transition: background 0.2s ease;
   }
 
   h1,h2,h3 {
@@ -50,16 +53,16 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
         max-width: 400px;
         border-radius: 5px;
-        border: 1px solid #ddd;
+        border: 1px solid ${colors.gray500};
         .main {
-          border-bottom: 1px solid #666;
+          border-bottom: 1px solid ${colors.gray500};
           padding: 0 10px;
           .user {
             display: flex;
             .avatar {
               margin: 10px;
               border-radius: 50%;
-              border: 2px solid #fff;
+              border: 2px solid ${colors.inverseBg};
             }
             .user-details {
               margin: 10px;
@@ -88,8 +91,7 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 200;
         margin: 0;
         a {
-          color: #ccc;
-
+          color: ${colors.gray500};
         }
       }
     }
