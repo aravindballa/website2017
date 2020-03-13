@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import mdxComponents from '../Mdx';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 import { AravindBalla } from '../Icons';
+import UpdatePrompt from '../UpdatePrompt';
 
 const renderBreadcrumb = pathname => {
   // TODO: refactor this!
@@ -65,6 +66,7 @@ const Layout = ({ children, location }) => (
             </MDXProvider>
           </StyledLayout>
           {location.pathname !== rootPath && <Footer />}
+          <UpdatePrompt />
         </React.Fragment>
       );
     }}

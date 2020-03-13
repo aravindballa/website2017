@@ -57,3 +57,9 @@ export const onRouteUpdate = () => {
     .querySelector('body')
     .classList.add(darkModeMediaQuery.matches ? 'theme-dark' : 'theme-light');
 };
+
+export const onServiceWorkerUpdateFound = () => {
+  if (window.localStorage) {
+    window.localStorage.setItem('sw-updated', 'true');
+  }
+};
