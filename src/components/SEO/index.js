@@ -39,7 +39,7 @@ const SEO = ({ postData, frontmatter = {}, postImage, isBlogPost }) => (
       const datePublished = isBlogPost ? new Date(postMeta.date).toISOString() : false;
       const image = postImage
         ? normalizeUrl(`${seo.siteUrl}${postImage}`)
-        : getShareImage({ title });
+        : getShareImage({ title: title.replace(/\&/g, 'and') });
 
       return (
         <React.Fragment>
