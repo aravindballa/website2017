@@ -22,11 +22,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <SEO
-          isBlogPost
-          frontmatter={{ ...post.frontmatter, slug: post.fields.slug }}
-          postImage={post.fields.socialImage.childImageSharp.original.src}
-        />
+        <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
         <StyledDate>{post.frontmatter.date}</StyledDate>
         {post.frontmatter.technologies && (
@@ -101,15 +97,6 @@ export const pageQuery = graphql`
       }
       fields {
         slug
-        socialImage {
-          childImageSharp {
-            original {
-              width
-              height
-              src
-            }
-          }
-        }
       }
     }
   }

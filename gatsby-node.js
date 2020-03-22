@@ -2,30 +2,6 @@ const path = require('path');
 const puppeteer = require('puppeteer');
 const fs = require('fs-extra');
 const { createFilePath } = require('gatsby-source-filesystem');
-const { createFileNode: baseCreateFileNode } = require('gatsby-source-filesystem/create-file-node');
-
-const postToImage = require('./src/social-cards/screenshot');
-
-async function createFileNode(path, createNode, createNodeId, parentNodeId) {
-  const fileNode = await baseCreateFileNode(path, createNodeId);
-  fileNode.parent = parentNodeId;
-  createNode(fileNode, {
-    name: `gatsby-source-filesystem`,
-  });
-  return fileNode;
-}
-
-let browser = null;
-
-exports.onPreInit = async () => {
-  // Launch a Puppeteer browser at the start of the build
-  browser = await puppeteer.launch({ headless: true });
-};
-
-exports.onPostBuild = async () => {
-  // Close the browser at the end
-  await browser.close();
-};
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -110,21 +86,6 @@ exports.onCreateNode = async ({ node, actions, getNode, store, createNodeId }) =
       node,
       value: node.frontmatter.banner,
     });
-
-    try {
-      // Generate our image from the node
-      const ogImage = await postToImage(CACHE_DIR, browser, node);
-      // Create the file node for the image
-      const ogImageNode = await createFileNode(ogImage, createNode, createNodeId, node.id);
-      // Attach the image to our Mdx node
-      createNodeField({
-        name: 'socialImage___NODE',
-        node,
-        value: ogImageNode.id,
-      });
-    } catch (e) {
-      console.log(e);
-    }
   }
 };
 

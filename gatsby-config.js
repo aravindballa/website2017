@@ -40,7 +40,6 @@ module.exports = {
               backgroundColor: '#141414',
               maxWidth: 590,
               quality: 100,
-              sizeByPixelDensity: true,
             },
           },
           {
@@ -153,5 +152,6 @@ module.exports = {
           }),
       },
     },
+    `gatsby-plugin-netlify-cache`,
   ],
 };
