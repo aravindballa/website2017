@@ -54,8 +54,8 @@
     "jest-image-snapshot": "^3.0.1",
     "jest-puppeteer": "^4.3.0",
     "lint-staged": "^8.1.5",
+    "puppeteer": "^2.1.1",
     "prettier": "^2.0.4",
-    "puppeteer": "^1.13.0",
     "start-server-and-test": "^1.10.11"
   },
   "homepage": "https://aravindballa.com",
