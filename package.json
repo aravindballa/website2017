@@ -51,7 +51,7 @@
     "gh-pages": "^1.2.0",
     "husky": "^4.2.3",
     "jest": "^24.9.0",
-    "jest-image-snapshot": "^2.10.0",
+    "jest-image-snapshot": "^3.0.1",
     "jest-puppeteer": "^4.3.0",
     "lint-staged": "^8.1.5",
     "prettier": "^1.14.2",
