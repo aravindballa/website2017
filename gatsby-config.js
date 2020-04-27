@@ -26,6 +26,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-anchor`,
+      options: {
+        rss: `https://anchor.fm/s/39d9b14/podcast/rss`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
@@ -103,7 +109,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => {
-              return allMdx.edges.map(edge => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
@@ -143,7 +149,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => {
+          allSitePage.edges.map((edge) => {
             return {
               url: normalizeUrl(site.siteMetadata.siteUrl + edge.node.path),
               changefreq: `daily`,

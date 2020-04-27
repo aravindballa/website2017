@@ -8,8 +8,9 @@ import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 import { AravindBalla } from '../Icons';
 import UpdatePrompt from '../UpdatePrompt';
 
-const renderBreadcrumb = pathname => {
+const renderBreadcrumb = (pathname) => {
   // TODO: refactor this!
+
   if (pathname.match(/projects/)) {
     return <Link to={'/projects'}>projects</Link>;
   } else if (pathname.match(/writings/)) {
@@ -32,7 +33,7 @@ const Layout = ({ children, location }) => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       const title = data.site.siteMetadata.title;
       const rootPath = `${__PATH_PREFIX__}/`;
       let header;
