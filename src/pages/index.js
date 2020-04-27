@@ -77,7 +77,7 @@ const HomePage = ({ data, location }) => {
             <p>
               Also, I post a few unfinished and work in progress thoughts at{' '}
               <a href="https://notes.aravindballa.com">notes.aravindballa.com</a> like{' '}
-              <a href="https://notes.aravindballa.com">this one</a> about writing.
+              <a href="https://notes.aravindballa.com/writing/">this one</a> about writing.
             </p>
             <ul>
               <li>
