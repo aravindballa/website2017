@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { scale } from '../utils/typography';
+import { colors } from '../utils/theme';
 
 const StyledFooter = styled.footer`
   text-align: center;
-  color: rgba(255, 255, 255, 0.4);
+  opacity: 0.4;
+  color: ${colors.inverseBg};
   ${scale(-0.5)}
   a {
-    color: rgba(255, 255, 255, 0.4);
+    color: ${colors.inverseBg};
   }
 `;
 
@@ -20,9 +22,14 @@ const Footer = () => (
       </a>
       .
       <br />
-      <a href="mailto:bsaaravind+website@gmail.com" rel="me">mail</a> |{' '}
-      <a href="https://twitter.com/aravindballa" rel="me">twitter</a> |{' '}
-      <a href="https://aravindballa.com/rss.xml">rss</a>
+      <a href="mailto:bsaaravind+website@gmail.com" rel="me">
+        mail
+      </a>{' '}
+      |{' '}
+      <a href="https://twitter.com/aravindballa" rel="me">
+        twitter
+      </a>{' '}
+      | <a href="https://aravindballa.com/rss.xml">rss</a>
     </p>
   </StyledFooter>
 );

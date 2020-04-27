@@ -72,11 +72,12 @@ const HomePage = ({ data, location }) => {
             <p>
               I started posting videos on{' '}
               <a href="https://www.youtube.com/channel/UC2y7GYWCZtXApu6iQmlmFnw">YouTube</a> lately
-              and enjoying the process of it. Watch and subscribe if you pke.
+              and enjoying the process of it. Watch and subscribe if you like them.
             </p>
             <p>
               Also, I post a few unfinished and work in progress thoughts at{' '}
-              <a href="https://notes.aravindballa.com">notes.aravindballa.com</a>
+              <a href="https://notes.aravindballa.com">notes.aravindballa.com</a> like{' '}
+              <a href="https://notes.aravindballa.com">this one</a> about writing.
             </p>
             <ul>
               <li>
