@@ -17,7 +17,7 @@ const HomePage = ({ data, location }) => {
         <Layout location={location} title={siteTitle} description={siteDescription}>
           <SEO />
           <p>
-            Hi 👋 I am Software Developer working remotely from Hyderdad, India. I love JS and CSS
+            Hi 👋 I am Software Developer working remotely from Hyderbad, India. I love JS and CSS
             💛. I like to <Link to="/projects">build stuff</Link>, document the process and share
             the knowledge I gain.
           </p>
