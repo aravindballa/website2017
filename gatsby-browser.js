@@ -1,4 +1,4 @@
-const updateFavicon = isDark => {
+const updateFavicon = (isDark) => {
   const faviconEL = document.querySelector('link[rel="icon"]');
   faviconEL.href = isDark ? '/logo-dark.png' : '/icons/icon-48x48.png';
 };
@@ -12,8 +12,8 @@ export const onRouteUpdate = () => {
       const repo = card.dataset.repo;
 
       fetch(`https://api.github.com/repos/${username}/${repo}`)
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           card.innerHTML = `
           <div class="card">
             <div class="main">
@@ -45,8 +45,15 @@ export const onRouteUpdate = () => {
     }
   }
 
+  if (document.querySelector('.instagram-media')) {
+    const scriptEl = document.createElement('script');
+    scriptEl.setAttribute('src', '//www.instagram.com/embed.js');
+    scriptEl.setAttribute('async', true);
+    document.head.appendChild(scriptEl);
+  }
+
   const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  darkModeMediaQuery.addListener(e => {
+  darkModeMediaQuery.addListener((e) => {
     updateFavicon(e.matches);
     document.querySelector('body').classList.remove('theme-dark', 'theme-light');
     document.querySelector('body').classList.add(e.matches ? 'theme-dark' : 'theme-light');

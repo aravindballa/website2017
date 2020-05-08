@@ -1,5 +1,5 @@
 ---
-title: 'Single Page Apps w/ Gatsby'
+title: 'Single Page Apps with Gatsby'
 date: '2019-11-04'
 type: 'article'
 description: 'Can we build a single page application using a static site generator, Gatsby? Ofcourse yes!'
@@ -15,7 +15,7 @@ We can get the benefits of code spitting with some React lazy suspense features 
 
 ```jsx
 const Contact = React.lazy(() => import('../components/Contact'));
-const LazyContact = props => (
+const LazyContact = (props) => (
   <React.Suspense fallback={'<p>Loading...</p>'}>
     <Contact {...props} />
   </React.Suspense>
@@ -50,21 +50,21 @@ Let's plan to have two routes, `/contact` and `/about` . In `src/components` we 
 
 ```jsx
 // src/components/Contact.js
-import React from "react"
+import React from 'react';
 
-console.log("contact component")
+console.log('contact component');
 
-export default function() {
-  return <div>Contact Us as you like.</div>
+export default function () {
+  return <div>Contact Us as you like.</div>;
 }
 
 // src/components/About.js
-import React from "react"
+import React from 'react';
 
-console.log("about component")
+console.log('about component');
 
-export default function() {
-  return <div>We are a great bunch of people</div>
+export default function () {
+  return <div>We are a great bunch of people</div>;
 }
 ```
 

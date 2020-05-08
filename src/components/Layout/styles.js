@@ -107,6 +107,25 @@ export const GlobalStyle = createGlobalStyle`
     font-style: italic;
   }
 
+  blockquote.twitter-tweet {
+    background: ${colors.gray700};
+    border: 0;
+    border-radius: 16px;
+    padding: 16px;
+    font-size: 1em;
+    font-style: normal;
+    &::before {
+      content: 'Source - Twitter';
+      font-size: 0.8em;
+      color: ${colors.gray500};
+      margin-bottom: 4px;
+    }
+  }
+
+  iframe.instagram-media {
+    margin: 0 auto;
+  }
+
   :not(pre) > code {
     border-radius: .3em;
     color: ${colors.palered};
