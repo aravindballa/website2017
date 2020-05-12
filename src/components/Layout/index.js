@@ -3,7 +3,7 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
 import Footer from '../Footer';
-import mdxComponents from '../Mdx';
+import mdxComponents from '../Mdx/Mdx';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 import { AravindBalla } from '../Icons';
 import UpdatePrompt from '../UpdatePrompt';

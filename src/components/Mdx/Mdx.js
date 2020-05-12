@@ -1,8 +1,9 @@
 import React from 'react';
 
 import Code from './Code';
+import GrayBlock from './GrayBlock';
 
-const preToCodeBlock = preProps => {
+const preToCodeBlock = (preProps) => {
   if (
     // children is code element
     preProps.children &&
@@ -27,7 +28,7 @@ const preToCodeBlock = preProps => {
 
 export default {
   wrapper: ({ children }) => <React.Fragment>{children}</React.Fragment>,
-  pre: preProps => {
+  pre: (preProps) => {
     const props = preToCodeBlock(preProps);
     // if there's a codeString and some props, we passed the test
     if (props) {
@@ -37,4 +38,5 @@ export default {
       return <pre {...preProps} />;
     }
   },
+  GrayBlock,
 };
