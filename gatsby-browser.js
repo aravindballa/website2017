@@ -45,6 +45,14 @@ export const onRouteUpdate = () => {
     }
   }
 
+  // <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  if (document.querySelector('.twitter-tweet')) {
+    const scriptEl = document.createElement('script');
+    scriptEl.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+    scriptEl.setAttribute('async', true);
+    document.head.appendChild(scriptEl);
+  }
+
   if (document.querySelector('.instagram-media')) {
     const scriptEl = document.createElement('script');
     scriptEl.setAttribute('src', '//www.instagram.com/embed.js');

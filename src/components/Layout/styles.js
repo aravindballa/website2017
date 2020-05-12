@@ -122,6 +122,10 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  twitter-widget {
+    margin: 0 auto;
+  }
+
   iframe.instagram-media {
     margin: 0 auto;
   }
