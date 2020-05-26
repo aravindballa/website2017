@@ -159,5 +159,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify-cache`,
+    {
+      resolve: 'gatsby-plugin-use-dark-mode',
+      options: {
+        classNameDark: 'theme-dark',
+        classNameLight: 'theme-light',
+        storageKey: 'darkMode',
+        minify: true,
+      },
+    },
   ],
 };

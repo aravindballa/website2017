@@ -67,10 +67,6 @@ export const onRouteUpdate = () => {
     document.querySelector('body').classList.add(e.matches ? 'theme-dark' : 'theme-light');
   });
   if (darkModeMediaQuery.matches) updateFavicon(true);
-
-  document
-    .querySelector('body')
-    .classList.add(darkModeMediaQuery.matches ? 'theme-dark' : 'theme-light');
 };
 
 export const onServiceWorkerUpdateFound = () => {
