@@ -35,8 +35,8 @@ const OBSScene = () => {
         `}
       ></div>
       <StyledFooter>
-        <h1>Working on gatsby-theme-andy</h1>
-        <pre>github.com/aravindballa/gatsby-theme-andy</pre>
+        <h1>Adding dark mode toggle to my website</h1>
+        <pre>github.com/aravindballa/website2017</pre>
         <p>@aravindballa | {new Date().toDateString()} </p>
       </StyledFooter>
     </StyledFrame>
