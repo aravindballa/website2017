@@ -7,6 +7,7 @@ import mdxComponents from '../Mdx/Mdx';
 import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 import { AravindBalla } from '../Icons';
 import UpdatePrompt from '../UpdatePrompt';
+import DarkModeToggle from '../DarkModeToggle';
 
 const renderBreadcrumb = (pathname) => {
   // TODO: refactor this!
@@ -61,7 +62,10 @@ const Layout = ({ children, location }) => (
         <React.Fragment>
           <StyledLayout isIndex={location.pathname === rootPath}>
             <GlobalStyle />
-            {header}
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              {header}
+              <DarkModeToggle />
+            </div>
             <MDXProvider components={mdxComponents}>
               <React.Fragment>{children}</React.Fragment>
             </MDXProvider>

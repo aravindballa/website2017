@@ -45,7 +45,8 @@
     "serve": "^11.2.0",
     "styled-components": "^5.1.0",
     "typography": "^0.16.17",
-    "unist-util-visit": "^2.0.2"
+    "unist-util-visit": "^2.0.2",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
