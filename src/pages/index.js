@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import { StyledIndex } from '../components/styles/index-page';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
-import DarkModeToggle from '../components/DarkModeToggle';
 
 const HomePage = ({ data, location }) => {
   console.log(data);
@@ -17,7 +16,6 @@ const HomePage = ({ data, location }) => {
       <StyledIndex>
         <Layout location={location} title={siteTitle} description={siteDescription}>
           <SEO />
-          <DarkModeToggle />
           <p>
             Hi 👋 I am Software Developer working remotely from Hyderabad, India. I love JS and CSS
             💛. I like to <Link to="/projects">build stuff</Link>, document the process and share

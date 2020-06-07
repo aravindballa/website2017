@@ -13,6 +13,10 @@ export const StyledIndex = styled.div`
     margin: 0 0 2rem 0;
   }
 
+  .btn-theme-toggle {
+    margin: 0 0 2rem 0;
+  }
+
   strong {
     color: white;
   }
