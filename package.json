@@ -24,7 +24,7 @@
     "gatsby-plugin-styled-components": "^3.2.4",
     "gatsby-plugin-typography": "^2.4.4",
     "gatsby-plugin-use-dark-mode": "^1.1.2",
-    "gatsby-remark-copy-linked-files": "^2.2.4",
+    "gatsby-remark-copy-linked-files": "^2.3.12",
     "gatsby-remark-embedder": "^2.0.1",
     "gatsby-remark-images": "^3.2.6",
     "gatsby-remark-responsive-iframe": "^2.3.4",
