@@ -24,7 +24,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
-        <StyledDate>{post.frontmatter.date}</StyledDate>
+        <StyledDate>Last edited on {post.frontmatter.date}</StyledDate>
         {post.frontmatter.technologies && (
           <StyledTech>
             Tech used -{' '}

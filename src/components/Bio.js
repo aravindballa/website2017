@@ -25,8 +25,8 @@ class Bio extends React.Component {
           }}
         />
         <p style={{ color: colors.green }}>
-          By <strong>Aravind Balla</strong> who is a cool human, building things for himself, and
-          sometimes for others.{' '}
+          By <strong>Aravind Balla</strong> who is a friendly human, building things for himself,
+          and sometimes for others.{' '}
           <a
             style={{ color: colors.green }}
             href="https://twitter.com/aravindballa"

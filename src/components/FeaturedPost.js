@@ -30,6 +30,7 @@ const StyledFeatPost = styled.div`
 const Tag = styled.div`
   font-size: 16px;
   background-color: ${colors.purple};
+  color: lavenderblush;
   display: inline;
   padding: 4px 8px;
   border-radius: 4px;
