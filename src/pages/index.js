@@ -21,6 +21,17 @@ const HomePage = ({ data, location }) => {
             💛. I like to <Link to="/projects">build stuff</Link>, document the process and share
             the knowledge I gain.
           </p>
+          <p>
+            I currently work 👨🏻‍💻 at{' '}
+            <a href="https://paperpile.com/?welcome" target="_blank" rel="noreferrer noopener">
+              Paperpile
+            </a>{' '}
+            where we are building tools – Paperpile and{' '}
+            <a href="https://bibguru.com/" target="_blank" rel="noreferrer noopener">
+              BibGuru
+            </a>{' '}
+            used by thousands of scientists and students for research from all over the world.
+          </p>
           <div className="homepage-content">
             <h3>Few things I've wrote recently</h3>
             <p>As I said, I like to share what I've learnt. So I (try to) write frequently.</p>
@@ -60,7 +71,7 @@ const HomePage = ({ data, location }) => {
                 </a>
               </li>
               <li>
-                <Link to="/talks/devfest-19/">Oct 2019: Build Blazing Fast Portfolis</Link>
+                <Link to="/talks/devfest-19/">Oct 2019: Build Blazing Fast Portfolios</Link>
               </li>
               <li>
                 <a href="https://www.meetup.com/coderplex/events/263195332/">
