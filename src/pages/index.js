@@ -29,8 +29,9 @@ const HomePage = ({ data, location }) => {
             where we are building tools – Paperpile and{' '}
             <a href="https://bibguru.com/" target="_blank" rel="noreferrer noopener">
               BibGuru
-            </a>{' '}
-            used by thousands of scientists and students for research from all over the world.
+            </a>
+            , which are used by thousands of scientists and students for research from all over the
+            world.
           </p>
           <div className="homepage-content">
             <h3>Few things I've wrote recently</h3>
