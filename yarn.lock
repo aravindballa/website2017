@@ -6905,6 +6905,15 @@ gatsby-plugin-page-creator@^2.2.4:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
+gatsby-plugin-plausible@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-plausible/-/gatsby-plugin-plausible-0.0.7.tgz#6f8c922bbc672a73bd8e9a39add61fb62ec96566"
+  integrity sha512-pWCXsrWal8lWMmZ1wJ2dolbwZZR1CZU1LVR/K1rYC8NeA+uqTLY8h3uH3hFgP5n8jmRRenOSJ9SjWM9OIdCjOA==
+  dependencies:
+    "@babel/runtime" "^7.9.2"
+    minimatch "3.0.4"
+    react "^16.13.1"
+
 gatsby-plugin-react-helmet@^3.2.5:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.2.5.tgz#af1290298f8826eafbbd383cb0a7f741e8f37821"

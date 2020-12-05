@@ -168,5 +168,11 @@ module.exports = {
         minify: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `aravindballa.com`,
+      },
+    },
   ],
 };
