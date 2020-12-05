@@ -50,7 +50,9 @@ const HomePage = ({ data, location }) => {
             <p>
               Brittik and I host a podcast where we talk about technology, startups and all the
               things we love about. It's called{' '}
-              <a href="https://learningcurve.dev">Learning Curve Podcast</a>
+              <a href="https://learningcurve.dev/?utm_source=aravindballa.com">
+                Learning Curve Podcast
+              </a>
             </p>
             {data.allAnchorEpisode.edges.map(({ node }) => (
               <p>
