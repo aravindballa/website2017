@@ -9,6 +9,8 @@ import { AravindBalla } from '../Icons';
 import UpdatePrompt from '../UpdatePrompt';
 import DarkModeToggle from '../DarkModeToggle';
 
+import '../../styles/tailwind.css';
+
 const renderBreadcrumb = (pathname) => {
   // TODO: refactor this!
 

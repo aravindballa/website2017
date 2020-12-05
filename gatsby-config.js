@@ -39,7 +39,9 @@ module.exports = {
           default: require.resolve('./src/templates/page.js'),
         },
         gatsbyRemarkPlugins: [
-          { resolve: 'gatsby-remark-copy-linked-files' },
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -57,19 +59,23 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          { resolve: 'gatsby-remark-smartypants' },
-          { resolve: 'gatsby-remark-embedder' },
+          {
+            resolve: 'gatsby-remark-smartypants',
+          },
+          {
+            resolve: 'gatsby-remark-embedder',
+          },
         ],
       },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-65268954-3`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: `UA-65268954-3`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -85,6 +91,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
+      // TODO remove?
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
@@ -114,7 +121,11 @@ module.exports = {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: normalizeUrl(site.siteMetadata.siteUrl + edge.node.fields.slug),
-                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                  custom_elements: [
+                    {
+                      'content:encoded': edge.node.html,
+                    },
+                  ],
                 });
               });
             },
@@ -168,5 +179,7 @@ module.exports = {
         minify: true,
       },
     },
+    'gatsby-plugin-postcss',
+    `gatsby-plugin-percy`,
   ],
 };
