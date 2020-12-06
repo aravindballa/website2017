@@ -6,14 +6,6 @@ import Img from 'gatsby-image';
 import Bio from '../components/Bio';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
-import {
-  StyledDate,
-  StyledNextPrev,
-  StyledTech,
-  StyledPost,
-  StyledImgCaption,
-} from '../components/styles/post';
-import { rhythm, scale } from '../utils/typography';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -24,45 +16,41 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <SEO isBlogPost frontmatter={{ ...post.frontmatter, slug: post.fields.slug }} />
         <h1>{post.frontmatter.title}</h1>
-        <StyledDate>Last edited on {post.frontmatter.date}</StyledDate>
+        <div className="text-blue text-sm">Last edited on {post.frontmatter.date}</div>
         {post.frontmatter.technologies && (
-          <StyledTech>
-            Tech used -{' '}
+          <div className="text-sm mt-4 inline-flex gap-2">
+            <span>Tech used -</span>
             {post.frontmatter.technologies.split(',').map((tech, i) => (
-              <span key={`${tech.trim()}-${i}`}>{tech.trim()}</span>
+              <span className="border rounded border-purple-300 px-1" key={`${tech.trim()}-${i}`}>{tech.trim()}</span>
             ))}
-          </StyledTech>
+          </div>
         )}
-        <StyledPost>
+        <div className="my-4">
           {post.frontmatter.banner && <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />}
           {post.frontmatter.bannercaption && (
-            <StyledImgCaption>{post.frontmatter.bannercaption}</StyledImgCaption>
+            <div className="opacity-40 text-xs"><i>{post.frontmatter.bannercaption}</i></div>
           )}
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </StyledPost>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        </div>
+        <MDXRenderer>{post.body}</MDXRenderer>
+        
         <Bio />
 
-        <StyledNextPrev>
-          <li>
+        <div className="flex justify-between">
+          <div>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link className="text-yellow hover:text-yellow" to={previous.fields.slug} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
-          </li>
-          <li>
+          </div>
+          <div>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link className="text-yellow hover:text-yellow" to={next.fields.slug} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
-          </li>
-        </StyledNextPrev>
+          </div>
+        </div>
       </Layout>
     );
   }

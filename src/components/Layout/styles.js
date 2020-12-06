@@ -10,38 +10,6 @@ import { colors, themeVariables } from '../../utils/theme';
 export const GlobalStyle = createGlobalStyle`
   ${themeVariables}
 
-  body {
-    background: ${colors.background};
-    color: ${colors.text};
-    font-display: auto;
-    transition: background 0.2s ease;
-  }
-
-  h1,h2,h3 {
-    margin-top: ${rhythm(1)};
-    color: ${colors.headings};
-      a {
-      box-shadow: none;
-      text-decoration: none;
-      color: inherit;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
-  a {
-    color: ${colors.headings};
-    text-decoration: none;
-
-    &:hover {
-      color: ${colors.text};
-      text-decoration: underline;
-      text-decoration-color: ${colors.red};
-    }
-  }
-
   hr {
     background: gray;
   }
@@ -145,23 +113,6 @@ export const GlobalStyle = createGlobalStyle`
       opacity: 1;
     }
   }
-`;
-
-export const StyledLayout = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 65ch;
-  padding: ${rhythm(1.5)} ${rhythm(3 / 4)};
-  ${({ isIndex }) =>
-    isIndex
-      ? css`
-          h1 {
-            text-align: center;
-          }
-        `
-      : css`
-          min-height: calc(100vh - 88px);
-        `}
 `;
 
 export const StyledCrumb = styled.h2`

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
-import { StyledIndex } from '../components/styles/index-page';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 
@@ -12,8 +11,7 @@ const HomePage = ({ data, location }) => {
   const siteDescription = data.site.siteMetadata.description;
 
   return (
-    <React.Fragment>
-      <StyledIndex>
+    <>
         <Layout location={location} title={siteTitle} description={siteDescription}>
           <SEO />
           <p>
@@ -33,7 +31,6 @@ const HomePage = ({ data, location }) => {
             , which are used by thousands of scientists and students for research from all over the
             world.
           </p>
-          <div className="homepage-content">
             <h3>Few things I've wrote recently</h3>
             <p>As I said, I like to share what I've learnt. So I (try to) write frequently.</p>
             <p>
@@ -45,7 +42,9 @@ const HomePage = ({ data, location }) => {
                 ))}
               </ul>
             </p>
+            <p>
             <Link to="/writings">👉 All the things I wrote</Link>
+            </p>
             <h3>You know about the podcast, right?</h3>
             <p>
               Brittik and I host a podcast where we talk about technology, startups and all the
@@ -104,11 +103,9 @@ const HomePage = ({ data, location }) => {
                 <a href="https://github.com/aravindballa">Github</a>
               </li>
             </ul>
-          </div>
         </Layout>
-      </StyledIndex>
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 

@@ -4,13 +4,74 @@
 
 @tailwind utilities;
 
-h3 {
-  @apply font-bold text-3xl;
+:root {
+  --red: #e94040;
+  --blue: #67bbef;
+  --green: #67d3be;
+  --purple: #8a65aa;
+  --yellow: #f5bf32;
+  --palered: #eb697f;
 }
+.theme-dark {
+  --background: #151515;
+  --foreground: #d7d7d7;
+  --headings: #ffffff;
+  --gray700: #242424;
+  --gray500: #4f4f4f;
+  --inverse-bg: #fff;
+}
+.theme-light {
+  --background: #fff;
+  --foreground: #151515;
+  --headings: #000;
+  --gray700: #f4f4f4;
+  --gray500: #4f4f4f;
+  --inverse-bg: #000;
+}
+
+body {
+  @apply font-sans bg-background text-foreground transition duration-200;
+}
+
+h1, h2, h3 {
+  @apply font-bold text-headings mb-4 mt-6;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
 h3 {
-  @apply font-bold text-2xl;
+  @apply text-2xl;
+}
+
+a {
+  @apply text-purple-200 hover:text-purple-300 hover:underline;
 }
 
 p {
   @apply mb-4;
+}
+
+strong {
+  @apply font-bold;
+}
+
+.layout {
+  @apply grid;
+  grid-template-columns: 1fr min(70ch, 100%) 1fr;
+  grid-auto-rows: min-content;
+}
+
+.layout > * {
+  grid-column: 2;
+}
+
+.layout > .full-width {
+  width: 100%;
+  grid-column: 1/4;
 }

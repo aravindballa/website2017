@@ -1,8 +1,6 @@
 import Typography from 'typography';
 
 const typography = new Typography({
-  baseFontSize: '16px',
-  baseLineHeight: 1.666,
   headerFontFamily: [
     'Avenir Next',
     'Helvetica Neue',
@@ -11,8 +9,6 @@ const typography = new Typography({
     'Arial',
     'sans-serif',
   ],
-  // bodyFontFamily: ['Epilogue', 'monospace'],
-  // googleFonts: [{ name: 'Epilogue', styles: [200, 400, 600] }],
   bodyFontFamily: ['Sora', 'monospace'],
   googleFonts: [{ name: 'Sora', styles: [200, 400, 600] }],
 });

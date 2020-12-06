@@ -62,16 +62,15 @@ const Layout = ({ children, location }) => (
       }
       return (
         <React.Fragment>
-          <StyledLayout isIndex={location.pathname === rootPath}>
-            <GlobalStyle />
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div className="mx-auto p-8 layout" isIndex={location.pathname === rootPath}>
+            <div className="flex justify-between">
               {header}
               <DarkModeToggle />
             </div>
             <MDXProvider components={mdxComponents}>
               <React.Fragment>{children}</React.Fragment>
             </MDXProvider>
-          </StyledLayout>
+          </div>
           {location.pathname !== rootPath && <Footer />}
           <UpdatePrompt />
         </React.Fragment>
