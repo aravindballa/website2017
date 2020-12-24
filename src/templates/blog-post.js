@@ -21,31 +21,45 @@ class BlogPostTemplate extends React.Component {
           <div className="text-sm mt-4 inline-flex gap-2">
             <span>Tech used -</span>
             {post.frontmatter.technologies.split(',').map((tech, i) => (
-              <span className="border rounded border-purple-300 px-1" key={`${tech.trim()}-${i}`}>{tech.trim()}</span>
+              <span className="border rounded border-purple-300 px-1" key={`${tech.trim()}-${i}`}>
+                {tech.trim()}
+              </span>
             ))}
           </div>
         )}
-        <div className="my-4">
-          {post.frontmatter.banner && <Img sizes={post.frontmatter.banner.childImageSharp.fluid} />}
+        <div className={`my-4 ${post.frontmatter.bannerFullWidth ? 'full-width' : ''}`}>
+          {post.frontmatter.banner && (
+            <Img className="rounded-md" sizes={post.frontmatter.banner.childImageSharp.fluid} />
+          )}
           {post.frontmatter.bannercaption && (
-            <div className="opacity-40 text-xs"><i>{post.frontmatter.bannercaption}</i></div>
+            <div className="opacity-40 text-xs mt-1">
+              <i>{post.frontmatter.bannercaption}</i>
+            </div>
           )}
         </div>
         <MDXRenderer>{post.body}</MDXRenderer>
-        
+
         <Bio />
 
         <div className="flex justify-between">
           <div>
             {previous && (
-              <Link className="text-yellow hover:text-yellow" to={previous.fields.slug} rel="prev">
+              <Link
+                className="text-yellow dark:text-yellow hover:text-yellow dark:hover:text-yellow"
+                to={previous.fields.slug}
+                rel="prev"
+              >
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </div>
           <div>
             {next && (
-              <Link className="text-yellow hover:text-yellow" to={next.fields.slug} rel="next">
+              <Link
+                className="text-yellow dark:text-yellow hover:text-yellow dark:hover:text-yellow"
+                to={next.fields.slug}
+                rel="next"
+              >
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -82,6 +96,7 @@ export const pageQuery = graphql`
           }
         }
         bannercaption
+        bannerFullWidth
       }
       fields {
         slug

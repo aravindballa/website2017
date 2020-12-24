@@ -12,15 +12,16 @@
   --yellow: #f5bf32;
   --palered: #eb697f;
 }
-.theme-dark {
+.dark {
   --background: #151515;
   --foreground: #d7d7d7;
   --headings: #ffffff;
+  /* replacing with bg-gray-200 dark:bg-gray-800 */
   --gray700: #242424;
   --gray500: #4f4f4f;
   --inverse-bg: #fff;
 }
-.theme-light {
+.light {
   --background: #fff;
   --foreground: #151515;
   --headings: #000;
@@ -30,10 +31,12 @@
 }
 
 body {
-  @apply font-sans bg-background text-foreground transition duration-200;
+  @apply font-sans bg-background text-foreground transition duration-200 text-lg;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   @apply font-bold text-headings mb-4 mt-6;
 }
 
@@ -50,15 +53,27 @@ h3 {
 }
 
 a {
-  @apply text-purple-200 hover:text-purple-300 hover:underline;
+  @apply text-purple-900 hover:text-purple-700 dark:text-purple-100 dark:hover:text-purple-300 hover:underline;
 }
 
 p {
   @apply mb-4;
 }
 
+p code {
+  @apply text-sm text-red dark:text-palered bg-red-50 dark:bg-gray-800 rounded px-1;
+}
+
+blockquote {
+  @apply bg-gray-200 dark:bg-gray-800 border-l-4 border-foreground rounded rounded-l-none p-4 mb-4;
+}
+
 strong {
   @apply font-bold;
+}
+
+.nav-item {
+  @apply text-headings hover:text-gray-700 focus:text-gray-700 dark:hover:text-gray-200 dark:focus:text-gray-200 hover:no-underline;
 }
 
 .layout {

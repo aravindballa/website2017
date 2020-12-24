@@ -4,7 +4,6 @@ import { MDXProvider } from '@mdx-js/react';
 
 import Footer from '../Footer';
 import mdxComponents from '../Mdx/Mdx';
-import { StyledLayout, StyledCrumb, GlobalStyle } from './styles';
 import { AravindBalla } from '../Icons';
 import UpdatePrompt from '../UpdatePrompt';
 import DarkModeToggle from '../DarkModeToggle';
@@ -15,11 +14,23 @@ const renderBreadcrumb = (pathname) => {
   // TODO: refactor this!
 
   if (pathname.match(/projects/)) {
-    return <Link to={'/projects'}>projects</Link>;
+    return (
+      <Link className="nav-item" to={'/projects'}>
+        projects
+      </Link>
+    );
   } else if (pathname.match(/writings/)) {
-    return <Link to={'/writings'}>writings</Link>;
+    return (
+      <Link className="nav-item" to={'/writings'}>
+        writings
+      </Link>
+    );
   } else if (pathname.match(/talks/)) {
-    return <Link to={'/'}>talks</Link>;
+    return (
+      <Link className="nav-item" to={'/'}>
+        talks
+      </Link>
+    );
   } else {
     return '';
   }
@@ -51,13 +62,15 @@ const Layout = ({ children, location }) => (
         );
       } else {
         header = (
-          <StyledCrumb>
+          <h2>
             <span>
-              <Link to={'/'}>{title}</Link>
+              <Link className="nav-item" to={'/'}>
+                {title}
+              </Link>
             </span>
-            <span>{'/'}</span>
-            <span>{renderBreadcrumb(location.pathname)}</span>
-          </StyledCrumb>
+            <span>{' / '}</span>
+            <span className="capitalize">{renderBreadcrumb(location.pathname)}</span>
+          </h2>
         );
       }
       return (

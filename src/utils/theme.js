@@ -1,3 +1,5 @@
+// TODO remove
+
 import { css } from 'styled-components';
 
 export const colors = {
@@ -15,6 +17,4 @@ export const colors = {
   inverseBg: 'var(--inverse-bg, #fff)',
 };
 
-export const themeVariables = css`
-  
-`;
+export const themeVariables = css``;

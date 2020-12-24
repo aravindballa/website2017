@@ -1,6 +1,7 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
+  darkMode: 'class',
   purge: ['./src/**/*.js'],
   theme: {
     fontFamily: {
@@ -9,6 +10,8 @@ module.exports = {
       serif: ['Merriweather', 'serif'],
     },
     colors: {
+      black: colors.black,
+      white: colors.white,
       gray: colors.gray,
       background: 'var(--background, #151515)',
       foreground: 'var(--foreground, #D7D7D7)',
@@ -20,27 +23,27 @@ module.exports = {
     extend: {
       colors: {
         red: {
-          ...colors.red,  
-          DEFAULT: '#E94040'
+          ...colors.red,
+          DEFAULT: '#E94040',
         },
         blue: {
           ...colors.blue,
-          DEFAULT: '#67BBEF'
+          DEFAULT: '#67BBEF',
         },
         green: {
           ...colors.green,
-          DEFAULT: '#67D3BE'
+          DEFAULT: '#67D3BE',
         },
         purple: {
           ...colors.purple,
-          DEFAULT: '#8A65AA'
+          DEFAULT: '#8A65AA',
         },
         yellow: {
           ...colors.yellow,
-          DEFAULT: '#F5BF32'
+          DEFAULT: '#F5BF32',
         },
-        palered: {DEFAULT: '#EB697F'},
-      }
+        palered: { DEFAULT: '#EB697F' },
+      },
     },
   },
   variants: {},

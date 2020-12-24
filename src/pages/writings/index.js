@@ -21,19 +21,21 @@ class WritingsIndex extends React.Component {
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </FeaturedPost>
           ))}
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <div className="mt-4" key={node.fields.slug}>
-              <h3>
-                <Link className="text-headings" to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          );
-        })}
+        <div className="grid grid-cols-2 gap-4">
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <div className="mt-4" key={node.fields.slug}>
+                <h3>
+                  <Link className="text-headings" to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            );
+          })}
+        </div>
       </Layout>
     );
   }
