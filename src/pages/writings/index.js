@@ -21,7 +21,7 @@ class WritingsIndex extends React.Component {
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </FeaturedPost>
           ))}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (

@@ -15,7 +15,7 @@ const DarkModeToggle = () => {
       <Helmet>
         <meta name="twitter:widgets:theme" content={darkMode.value ? 'dark' : 'light'} />
       </Helmet>
-      <div className="btn-theme-toggle cursor-pointer outline-none" onClick={darkMode.toggle}>
+      <div className="btn-theme-toggle cursor-pointer outline-none pt-6" onClick={darkMode.toggle}>
         {darkMode.value ? '☀️' : '🌙'}
       </div>
     </>
