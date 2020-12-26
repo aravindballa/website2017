@@ -41,7 +41,7 @@ export default () => {
     }
   }, []);
 
-  return swUpdated || true ? (
+  return swUpdated ? (
     <div className="fixed bottom-4 md:right-4 p-4 md:max-w-sm mx-4 md:mx-0 bg-gray-200 dark:bg-gray-800 border border-foreground shadow-md rounded-md text-base">
       <p className="">This website has been updated. Please refresh to get the new version! ✨</p>
       <button

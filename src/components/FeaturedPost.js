@@ -1,13 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
-import { colors } from '../utils/theme';
-
-export const StyledLink = styled(Link)`
-  &:hover {
-    text-decoration: none;
-  }
-`;
 
 const FeaturedPost = ({ link, children }) => (
   <Link
