@@ -15,30 +15,28 @@ export const onRouteUpdate = () => {
         .then((res) => res.json())
         .then((data) => {
           card.innerHTML = `
-          <div class="card">
-            <div class="main">
-              <div class="user"><img class="avatar" src="${
+          <div class="mx-auto rounded border border-foreground max-w-md text-base">
+            <div class="border-b-2 border-foreground p-4">
+              <div class="flex"><img class="rounded-full border-2 border-foreground w-16 h-16" src="${
                 data.owner.avatar_url
-              }" width="50" height="50"/>
-                <div class="user-details">
-                  <h3><a href="https://github.com/${data.full_name}" target="_blank">${
-            data.name
-          }</a></h3>
+              }" width="64" height="64"/>
+                <div class="ml-4">
+                  <h3 class="m-0 mb-2"><a href="https://github.com/${
+                    data.full_name
+                  }" target="_blank">${data.name}</a></h3>
                   <p class="desc">${data.description || 'Visit the repo for more info...'}</p>
                 </div>
               </div>
             </div>
-            <div class="stats">
-              <span class="summary">
+            <div class="py-2 px-4 text-right text-sm">
               <span><b>${data.stargazers_count}</b> Stars</span> | 
               <span><b>${data.forks}</b> Forks</span>
-              </span>
             </div>
           </div>
-          <p class="card-caption">
-            <a href="https://github.com/${data.full_name}" target="_blank">https://github.com/${
-            data.full_name
-          }</a>
+          <p class="mt-1 text-center text-xs">
+            <a class="text-gray-400 dark:text-gray-600" href="https://github.com/${
+              data.full_name
+            }" target="_blank">https://github.com/${data.full_name}</a>
           </p>
           `;
         });

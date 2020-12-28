@@ -42,11 +42,12 @@ export default () => {
   }, []);
 
   return swUpdated ? (
-    <StyledWrapper>
-      <p>This website has been updated. Please refresh to get the new version! ✨</p>
+    <div className="fixed bottom-4 md:right-4 p-4 md:max-w-sm mx-4 md:mx-0 bg-gray-200 dark:bg-gray-800 border border-foreground shadow-md rounded-md text-base">
+      <p className="">This website has been updated. Please refresh to get the new version! ✨</p>
       <button
+        className="text-green-600 dark:text-green"
         onClick={() => {
-          window.location.reload(true);
+          window.location.reload();
           if (window.localStorage) {
             window.localStorage.setItem('sw-updated', 'false');
             setSwUpdated(false);
@@ -55,6 +56,6 @@ export default () => {
       >
         Refresh
       </button>
-    </StyledWrapper>
+    </div>
   ) : null;
 };

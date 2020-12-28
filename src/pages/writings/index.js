@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../../components/Layout';
-import { StyledSummary, StyledProject } from '../../components/styles/projects';
 import SEO from '../../components/SEO';
 import FeaturedPost from '../../components/FeaturedPost';
 
@@ -22,31 +22,29 @@ class WritingsIndex extends React.Component {
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
             </FeaturedPost>
           ))}
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug;
-          return (
-            <StyledProject key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </StyledProject>
-          );
-        })}
-        <hr />
-        <StyledSummary>
-          <i>Reached the end. Checkout articles on </i>
-          <a href="https://medium.com/@aravindballa" target="_blank">
-            Medium
-          </a>{' '}
-          <i>or </i>
-          <a href="https://dev.to/aravindballa" target="_blank">
-            Dev.to
-          </a>{' '}
-          <i>that I wrote earlier.</i>
-        </StyledSummary>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
+          {posts.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <div className="mt-4" key={node.fields.slug}>
+                {node.frontmatter.banner && (
+                  <Link to={node.fields.slug}>
+                    <Img
+                      className="rounded-md bg-cover h-64"
+                      sizes={node.frontmatter.banner.childImageSharp.fluid}
+                    />
+                  </Link>
+                )}
+                <h3>
+                  <Link className="text-headings" to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            );
+          })}
+        </div>
       </Layout>
     );
   }
@@ -71,6 +69,13 @@ export const pageQuery = graphql`
             published
             featured
             date(formatString: "MMMM DD, YYYY")
+            banner {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
           }
         }
       }

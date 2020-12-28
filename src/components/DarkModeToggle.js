@@ -1,29 +1,24 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import useDarkMode from 'use-dark-mode';
-import styled from 'styled-components';
-import { colors } from '../utils/theme';
-import { rhythm } from '../utils/typography';
-
-const StyledDarkMode = styled.button`
-  border: 0;
-  background: transparent;
-  margin: 1.666rem 0 2rem 0;
-  outline: none;
-  cursor: pointer;
-`;
 
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(false, {
-    classNameDark: 'theme-dark',
-    classNameLight: 'theme-light',
+    classNameDark: 'dark',
+    classNameLight: 'light',
     storageKey: 'darkMode',
     minify: true,
   });
 
   return (
-    <StyledDarkMode className="btn-theme-toggle" onClick={darkMode.toggle}>
-      {darkMode.value ? '☀️' : '🌙'}
-    </StyledDarkMode>
+    <>
+      <Helmet>
+        <meta name="twitter:widgets:theme" content={darkMode.value ? 'dark' : 'light'} />
+      </Helmet>
+      <div className="btn-theme-toggle cursor-pointer outline-none pt-6" onClick={darkMode.toggle}>
+        {darkMode.value ? '☀️' : '🌙'}
+      </div>
+    </>
   );
 };
 
