@@ -174,5 +174,11 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     `gatsby-plugin-percy`,
+    {
+      resolve: `gatsby-plugin-plausible`,
+      options: {
+        domain: `aravindballa.com`,
+      },
+    },
   ],
 };
