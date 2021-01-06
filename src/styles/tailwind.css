@@ -72,13 +72,18 @@ strong {
   @apply font-bold;
 }
 
+.gatsby-resp-image-background-image,
+.gatsby-resp-image-image {
+  @apply rounded-md;
+}
+
 .nav-item {
   @apply text-headings hover:text-gray-700 focus:text-gray-700 dark:text-headings dark:hover:text-gray-200 dark:focus:text-gray-200 hover:no-underline;
 }
 
 .layout {
   @apply grid;
-  grid-template-columns: 1fr min(70ch, 100%) 1fr;
+  grid-template-columns: 1fr min(55ch, 100%) 1fr;
   grid-auto-rows: min-content;
 }
 

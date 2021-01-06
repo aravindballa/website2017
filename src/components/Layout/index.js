@@ -76,7 +76,7 @@ const Layout = ({ children, location }) => (
       return (
         <React.Fragment>
           <div className="mx-auto p-8 layout" isIndex={location.pathname === rootPath}>
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-8">
               {header}
               <DarkModeToggle />
             </div>
