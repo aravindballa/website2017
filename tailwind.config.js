@@ -10,9 +10,7 @@ module.exports = {
       serif: ['Merriweather', 'serif'],
     },
     colors: {
-      black: colors.black,
-      white: colors.white,
-      gray: colors.gray,
+      ...colors,
       background: 'var(--background, #151515)',
       foreground: 'var(--foreground, #D7D7D7)',
       headings: 'var(--headings, #FFFFFF)',
