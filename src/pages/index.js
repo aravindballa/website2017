@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Footer from '../components/Footer';
 import getLCImage from '../utils/lcImage';
+import getRandomTailwindGradient from '../utils/getRandomTailwindGradient';
 
 const HomePage = ({ data, location }) => {
   console.log(data);
@@ -43,14 +44,18 @@ const HomePage = ({ data, location }) => {
                 className="text-base hover:bg-gray-200 dark:hover:bg-gray-800 px-6 pt-4 rounded"
                 key={node.fields.slug}
               >
-                {node.frontmatter.banner && (
-                  <Link to={node.fields.slug}>
+                <Link to={node.fields.slug}>
+                  {node.frontmatter.banner ? (
                     <Img
                       className="rounded-md bg-cover h-32 -mb-4"
                       sizes={node.frontmatter.banner.childImageSharp.fluid}
                     />
-                  </Link>
-                )}
+                  ) : (
+                    <div
+                      className={`rounded-md bg-cover h-32 w-full ${getRandomTailwindGradient()}`}
+                    />
+                  )}
+                </Link>
                 <h3>
                   <Link className="text-headings" to={node.fields.slug}>
                     {title}

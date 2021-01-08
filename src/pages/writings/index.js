@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import FeaturedPost from '../../components/FeaturedPost';
+import getRandomTailwindGradient from '../../utils/getRandomTailwindGradient';
 
 class WritingsIndex extends React.Component {
   render() {
@@ -27,14 +28,18 @@ class WritingsIndex extends React.Component {
             const title = node.frontmatter.title || node.fields.slug;
             return (
               <div className="mt-4" key={node.fields.slug}>
-                {node.frontmatter.banner && (
-                  <Link to={node.fields.slug}>
+                <Link to={node.fields.slug}>
+                  {node.frontmatter.banner ? (
                     <Img
                       className="rounded-md bg-cover h-64"
                       sizes={node.frontmatter.banner.childImageSharp.fluid}
                     />
-                  </Link>
-                )}
+                  ) : (
+                    <div
+                      className={`rounded-md bg-cover h-64 w-full ${getRandomTailwindGradient()}`}
+                    />
+                  )}
+                </Link>
                 <h3>
                   <Link className="text-headings" to={node.fields.slug}>
                     {title}
