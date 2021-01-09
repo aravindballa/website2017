@@ -1,8 +1,14 @@
 const colors = require('tailwindcss/colors');
+const { colorsToNotPurge } = require('./src/utils/getRandomTailwindGradient');
 
 module.exports = {
   darkMode: 'class',
-  purge: ['./src/**/*.js'],
+  purge: {
+    content: ['./src/**/*.js', './content/**/*.(md|mdx)', './utils/**/*.js'],
+    options: {
+      safelist: [...colorsToNotPurge()],
+    },
+  },
   theme: {
     fontFamily: {
       head: ['Avenir Next', 'sans-serif'],

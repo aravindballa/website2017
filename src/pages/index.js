@@ -4,12 +4,10 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer';
 import getLCImage from '../utils/lcImage';
-import getRandomTailwindGradient from '../utils/getRandomTailwindGradient';
+import { getRandomTailwindGradient } from '../utils/getRandomTailwindGradient';
 
 const HomePage = ({ data, location }) => {
-  console.log(data);
   const siteTitle = data.site.siteMetadata.title;
   const siteDescription = data.site.siteMetadata.description;
 
@@ -140,7 +138,6 @@ const HomePage = ({ data, location }) => {
           </li>
         </ul>
       </Layout>
-      <Footer />
     </>
   );
 };

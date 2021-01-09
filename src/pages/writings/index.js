@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
 import FeaturedPost from '../../components/FeaturedPost';
-import getRandomTailwindGradient from '../../utils/getRandomTailwindGradient';
+import { getRandomTailwindGradient } from '../../utils/getRandomTailwindGradient';
 
 class WritingsIndex extends React.Component {
   render() {
