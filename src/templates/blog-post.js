@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 import Bio from '../components/Bio';
 import SEO from '../components/SEO';
 import Layout from '../components/Layout';
+import Subscribe from '../components/Subscribe';
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -40,6 +41,8 @@ class BlogPostTemplate extends React.Component {
         <MDXRenderer>{post.body}</MDXRenderer>
 
         <Bio />
+
+        <Subscribe />
 
         <div className="flex justify-between">
           <div>
