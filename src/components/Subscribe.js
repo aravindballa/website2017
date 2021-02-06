@@ -49,6 +49,7 @@ const Subscribe = () => {
           <div className="flex mt-4 gap-y-2 md:gap-x-2 md:gap-y-0 flex-col md:flex-row">
             <input
               id="name"
+              name="name"
               type="text"
               className="px-3 py-1 dark:bg-purple-800 dark-bg-opacity-25 bg-purple-200 placeholder-purple-400 text-base rounded"
               placeholder="Name"
@@ -57,6 +58,7 @@ const Subscribe = () => {
             />
             <input
               id="email"
+              name="email"
               type="email"
               className="px-3 py-1 dark:bg-purple-800 dark-bg-opacity-25 bg-purple-200 placeholder-purple-400 text-base rounded flex-1"
               placeholder="yourname@example.com"
