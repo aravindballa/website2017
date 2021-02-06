@@ -20,8 +20,12 @@ const Subscribe = () => {
             body: encode({ [`form-name`]: `mailing-list`, name, email }),
           });
           if (res.status === 200) setStatus(`DONE`);
-          else setStatus(`ERROR`);
+          else {
+            console.log(res);
+            setStatus(`ERROR`);
+          }
         } catch (err) {
+          console.log(err);
           setStatus(`ERROR`);
         }
       }}
