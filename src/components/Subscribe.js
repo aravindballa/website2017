@@ -1,5 +1,11 @@
 import React from 'react';
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + `=` + encodeURIComponent(data[key]))
+    .join(`&`);
+};
+
 const Subscribe = () => {
   const [name, setName] = React.useState(``);
   const [email, setEmail] = React.useState(``);
@@ -21,7 +27,6 @@ const Subscribe = () => {
           });
           if (res.status === 200) setStatus(`DONE`);
           else {
-            console.log(res);
             setStatus(`ERROR`);
           }
         } catch (err) {
