@@ -16,6 +16,8 @@ const Subscribe = () => {
 
   return (
     <form
+      name="mailing-list"
+      data-netlify={true}
       onSubmit={async (e) => {
         e.preventDefault();
         setStatus('SUBMITTING');
