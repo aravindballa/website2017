@@ -8,24 +8,28 @@ const encode = (data) => {
 
 const Subscribe = () => {
   const [name, setName] = React.useState(``);
+  const [lastname, setLastName] = React.useState(``);
   const [email, setEmail] = React.useState(``);
   const [status, setStatus] = React.useState(`READY`);
 
   const handleNameChange = (e) => setName(e.target.value);
+  const handleLastNameChange = (e) => setLastName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
 
   return (
     <form
       name="mailing-list"
       data-netlify={true}
+      data-netlify-honeypot="lastname"
       onSubmit={async (e) => {
         e.preventDefault();
         setStatus('SUBMITTING');
+
         try {
           const res = await fetch(`/`, {
             method: `POST`,
             headers: { [`Content-Type`]: `application/x-www-form-urlencoded` },
-            body: encode({ [`form-name`]: `mailing-list`, name, email }),
+            body: encode({ [`form-name`]: `mailing-list`, name, lastname, email }),
           });
           if (res.status === 200) setStatus(`DONE`);
           else {
@@ -55,6 +59,16 @@ const Subscribe = () => {
               placeholder="Name"
               value={name}
               onChange={handleNameChange}
+            />
+            <input
+              id="last-name"
+              name="last-name"
+              type="text"
+              hidden
+              className="px-3 py-1 dark:bg-purple-800 dark-bg-opacity-25 bg-purple-200 placeholder-purple-400 text-base rounded"
+              placeholder="Name"
+              value={lastname}
+              onChange={handleLastNameChange}
             />
             <input
               id="email"
