@@ -83,7 +83,7 @@ strong {
 
 .layout {
   @apply grid;
-  grid-template-columns: 1fr min(55ch, 100%) 1fr;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
   grid-auto-rows: min-content;
 }
 

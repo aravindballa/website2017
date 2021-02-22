@@ -32,14 +32,15 @@ const HomePage = ({ data, location }) => {
           , which are used by thousands of scientists and students for research from all over the
           world.
         </p>
+
         <h2>Few things I've wrote recently</h2>
         <p>As I said, I like to share what I've learnt. So I (try to) write frequently.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6 -mx-4">
           {data.allMdx.edges.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
             return (
               <div
-                className="text-base hover:bg-gray-200 dark:hover:bg-gray-800 px-6 pt-4 rounded"
+                className="text-base hover:bg-gray-200 dark:hover:bg-gray-800 px-4 pt-4 rounded"
                 key={node.fields.slug}
               >
                 <Link to={node.fields.slug}>

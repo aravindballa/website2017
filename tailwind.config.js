@@ -11,8 +11,8 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      head: ['Avenir Next', 'sans-serif'],
-      sans: ['Sora', 'sans-serif'],
+      head: ['Poppins', 'sans-serif'],
+      sans: ['Work Sans', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
     colors: {
