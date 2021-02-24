@@ -47,6 +47,7 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-live": "^2.2.3",
+    "react-notion": "^0.9.3",
     "react-typography": "^0.16.13",
     "serve": "^11.3.2",
     "styled-components": "^5.2.1",

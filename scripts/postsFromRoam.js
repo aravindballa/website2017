@@ -57,10 +57,16 @@ description: '${block.frontmatter.Description}'
   const ROAM_EMAIL = process.env.ROAM_EMAIL;
   const ROAM_PASSWORD = process.env.ROAM_PASSWORD;
 
-  const graph = await fetchRoamResearch(ROAM_URL, {
-    email: ROAM_EMAIL,
-    password: ROAM_PASSWORD,
-  });
+  const graph = await fetchRoamResearch(
+    ROAM_URL,
+    {
+      email: ROAM_EMAIL,
+      password: ROAM_PASSWORD,
+    },
+    { reporter: { info: console.log }, puppeteer: { headless: false } }
+  );
+
+  console.log(graph);
 
   const validNodes = [];
   for (const node of graph) {

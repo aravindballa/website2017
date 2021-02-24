@@ -11,6 +11,19 @@ const HomePage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const siteDescription = data.site.siteMetadata.description;
 
+  const allPosts = [
+    ...data.allMdx.edges.map(({ node }) => ({
+      title: node.frontmatter.title,
+      slug: node.fields.slug,
+      banner: node.frontmatter.banner,
+      excerpt: node.excerpt,
+      date: node.frontmatter.date,
+    })),
+    ...data.allNotionPost.nodes,
+  ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  console.log(allPosts);
+
   return (
     <>
       <Layout location={location} title={siteTitle} description={siteDescription}>
@@ -36,18 +49,18 @@ const HomePage = ({ data, location }) => {
         <h2>Few things I've wrote recently</h2>
         <p>As I said, I like to share what I've learnt. So I (try to) write frequently.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 gap-y-6 -mx-4">
-          {data.allMdx.edges.map(({ node }) => {
-            const title = node.frontmatter.title || node.fields.slug;
+          {allPosts.slice(0, 3).map((post) => {
+            const title = post.title || post.slug;
             return (
               <div
                 className="text-base hover:bg-gray-200 dark:hover:bg-gray-800 px-4 pt-4 rounded"
-                key={node.fields.slug}
+                key={post.slug}
               >
-                <Link to={node.fields.slug}>
-                  {node.frontmatter.banner ? (
+                <Link to={post.slug}>
+                  {post.banner ? (
                     <Img
                       className="rounded-md bg-cover h-32 -mb-4"
-                      sizes={node.frontmatter.banner.childImageSharp.fluid}
+                      sizes={post.banner.childImageSharp.fluid}
                     />
                   ) : (
                     <div
@@ -56,11 +69,11 @@ const HomePage = ({ data, location }) => {
                   )}
                 </Link>
                 <h3>
-                  <Link className="text-headings" to={node.fields.slug}>
+                  <Link className="text-headings" to={post.slug}>
                     {title}
                   </Link>
                 </h3>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                {post.excerpt && <p dangerouslySetInnerHTML={{ __html: post.excerpt }} />}
               </div>
             );
           })}
@@ -189,6 +202,13 @@ export const pageQuery = graphql`
             episode
           }
         }
+      }
+    }
+    allNotionPost(filter: { draft: { ne: true } }, sort: { order: DESC, fields: date }) {
+      nodes {
+        slug
+        title
+        date
       }
     }
   }

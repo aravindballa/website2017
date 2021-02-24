@@ -1,7 +1,9 @@
 const path = require('path');
-const puppeteer = require('puppeteer');
 const fs = require('fs-extra');
+const crypto = require('crypto');
 const { createFilePath } = require('gatsby-source-filesystem');
+
+const { getAllNotionPosts, getNotionPostBlocks } = require('./lib/postsFromNotion');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -63,6 +65,47 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // Fetch the posts from Notion
+
+  const notionPosts = await getAllNotionPosts();
+  for (const post of notionPosts) {
+    const blocks = await getNotionPostBlocks(post);
+    createPage({
+      path: `writings/${post.Slug}`,
+      component: path.resolve(`./src/templates/notion-post.js`),
+      context: {
+        slug: `writings/${post.Slug}`,
+        blocks,
+      },
+    });
+  }
+};
+
+exports.sourceNodes = async ({ actions }) => {
+  const { createNode } = actions;
+
+  const notionPosts = await getAllNotionPosts();
+  for (const post of notionPosts) {
+    // create node for graphql
+    const node = {
+      id: `${post.Slug}`,
+      parent: `__SOURCE__`,
+      internal: {
+        type: `NotionPost`,
+      },
+      children: [],
+
+      // Other fields that you want to query with graphQl
+      slug: post.Slug,
+      title: post.Name,
+      date: post.Date,
+      draft: post.Draft,
+    };
+    const contentDigest = crypto.createHash(`md5`).update(JSON.stringify(node)).digest(`hex`);
+    node.internal.contentDigest = contentDigest;
+    createNode(node);
+  }
 };
 
 exports.onCreateNode = async ({ node, actions, getNode, store, createNodeId }) => {
