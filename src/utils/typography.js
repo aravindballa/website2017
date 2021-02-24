@@ -1,16 +1,12 @@
 import Typography from 'typography';
 
 const typography = new Typography({
-  headerFontFamily: [
-    'Avenir Next',
-    'Helvetica Neue',
-    'Segoe UI',
-    'Helvetica',
-    'Arial',
-    'sans-serif',
+  headerFontFamily: ['Poppins', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+  bodyFontFamily: ['Work Sans', 'monospace'],
+  googleFonts: [
+    { name: 'Work Sans', styles: [200, 400, 600] },
+    { name: 'Poppins', styles: [200, 400, 600] },
   ],
-  bodyFontFamily: ['Sora', 'monospace'],
-  googleFonts: [{ name: 'Sora', styles: [200, 400, 600] }],
 });
 
 // Hot reload typography in development.

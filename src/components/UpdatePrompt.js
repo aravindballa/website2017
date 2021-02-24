@@ -36,7 +36,6 @@ export default () => {
 
   React.useEffect(() => {
     if (window.localStorage) {
-      console.log(window.localStorage.getItem('sw-updated'));
       setSwUpdated(JSON.parse(window.localStorage.getItem('sw-updated') || 'false'));
     }
   }, []);

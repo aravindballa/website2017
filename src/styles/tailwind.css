@@ -83,7 +83,7 @@ strong {
 
 .layout {
   @apply grid;
-  grid-template-columns: 1fr min(55ch, 100%) 1fr;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
   grid-auto-rows: min-content;
 }
 
@@ -94,4 +94,8 @@ strong {
 .layout > .full-width {
   width: 100%;
   grid-column: 1/4;
+}
+
+.dark .dark-bg-opacity-25 {
+  --tw-bg-opacity: 0.25;
 }
