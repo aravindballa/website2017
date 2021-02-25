@@ -7,6 +7,7 @@ description: 'It\'s not that hard. We just have to hook into gatsby-node.'
 tags: 'gatsby, gatsbyjs, advanced gatsby, rest api, graphql, gatsby-source-api'
 banner: banner.jpg
 bannercaption: Photo by Tamara Bitter on Unsplash
+bannerFullWidth: true
 ---
 
 Creating pages in Gatsby is easy. But when we want the pages to be also part of the GraphQL layer so that we can query them in index pages, we need to hook into `sourceNode()` in the `gatsby-node.js`.
