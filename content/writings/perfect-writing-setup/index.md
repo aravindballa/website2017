@@ -29,6 +29,12 @@ Working copy clones the repositories to the Files locally. I open the repo in iA
 - **Syncs** directly to GitHub, so it gets built and deployed when updated.
 - It looks beautiful, keeps me focused and lets me use my **iPad**. Which is good because, I don’t want to open / sit with my laptop after work.
 
+## Bonus
+
+When ever I open iA Writer, [Shortcuts](https://itunes.apple.com/us/app/id915249334?mt=8) (automations) make sure the content I have is up to date by pulling content from the repository. Thanks [Quinn](https://twitter.com/com/status/1364637833965797378?s=21)!
+
+I still manually commit the changes from Working Copy app as I don’t want to push commits (and re deploy the website) every time I close the app.
+
 ---
 
 This is likely to evolve or discarded completely. 😅
