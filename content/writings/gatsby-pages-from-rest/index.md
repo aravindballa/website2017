@@ -3,15 +3,14 @@ title: 'Build pages in Gatsby from Rest API'
 date: '2021-02-25'
 type: 'article'
 published: true
-description: 'It\'s not that hard. We just have to hook into gatsby-node.'
-banner: banner.jpg
-bannercaption: Photo by Tamara Bitter on Unsplash
+description: 'Its not that hard. We just have to hook into gatsby-node.'
+tags: 'gatsby, gatsbyjs, advanced gatsby, rest api, graphql, gatsby-source-api'
+banner: 'banner.jpg'
+bannercaption: 'Photo by Tamara Bitter on Unsplash'
 bannerFullWidth: true
 ---
 
 Creating pages in Gatsby is easy. But when we want the pages to be also part of the GraphQL layer so that we can query them in index pages, we need to hook into `sourceNode()` in the `gatsby-node.js`.
-
-TL;DR
 
 ```js
 // gatsby-node.js
@@ -19,7 +18,7 @@ TL;DR
 const fetch = require(‘node-fetch’;)
 
 // part one
-exports.createPages = async ({ actions }) => {
+const createPages = async ({ actions }) => {
   const { createPage } = actions;
 
   const allPosts = await (await fetch(‘http://some-api.com/all’)).json();
@@ -37,7 +36,7 @@ exports.createPages = async ({ actions }) => {
 };
 
 // part two
-exports.sourceNodes = async ({ actions }) => {
+const sourceNodes = async ({ actions }) => {
   const { createNode } = actions;
 
   const allPosts = await (await fetch(‘http://some-api.com/all’)).json();
@@ -63,6 +62,8 @@ exports.sourceNodes = async ({ actions }) => {
     createNode(node);
   }
 };
+
+// module.exports = { createPages, sourceNodes };
 ```
 
 Let me explain this. There are 2 parts to it.
