@@ -4,7 +4,6 @@ date: '2021-02-25'
 type: 'article'
 published: true
 description: 'It\'s not that hard. We just have to hook into gatsby-node.'
-tags: 'gatsby, gatsbyjs, advanced gatsby, rest api, graphql, gatsby-source-api'
 banner: banner.jpg
 bannercaption: Photo by Tamara Bitter on Unsplash
 bannerFullWidth: true
@@ -67,6 +66,7 @@ exports.sourceNodes = async ({ actions }) => {
 ```
 
 Let me explain this. There are 2 parts to it.
+
 - One - creating the pages after fetching from the rest API using `createPage()`
 - Two - creating the node in the GraphQL layer to be able to query in other pages (for example in `index.js` where you list all the pages)
 
@@ -76,13 +76,13 @@ To list them in any other page, we can use a query that looks like this
 
 ```graphql
 query {
-	allPost(sort: { order: DESC, fields: date }) {
-	  nodes {
-	    slug
-	    title
-	    date
-	  }
-	}
+  allPost(sort: { order: DESC, fields: date }) {
+    nodes {
+      slug
+      title
+      date
+    }
+  }
 }
 ```
 
