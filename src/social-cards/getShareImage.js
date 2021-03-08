@@ -3,9 +3,8 @@
 const getShareImage = ({
   title,
   date,
-  cloudName,
   imagePublicID,
-  cloudinaryUrlBase = 'https://res.cloudinary.com',
+  cloudinaryUrlBase = 'https://images.balla.dev', // enables cache for https://res.cloudinary.com/cloud_name/image
   version = null,
   titleFont = 'arial',
   dateFont = 'consolas',
@@ -47,8 +46,6 @@ const getShareImage = ({
   // combine all the pieces required to generate a Cloudinary URL
   const urlParts = [
     cloudinaryUrlBase,
-    cloudName,
-    'image',
     'upload',
     imageConfig,
     titleConfig,
@@ -71,16 +68,14 @@ const getShareImage = ({
 //   titleFont: 'Raleway',
 //   date: 'July',
 //   dateFont: 'Inconsolata',
-//   cloudName: 'djeivq7td',
 //   imagePublicID: 'card',
 // });
 
 export default ({ title, dateString = null }) =>
   getShareImage({
     title: title,
-    titleFont: 'Raleway',
+    titleFont: 'Poppins',
     date: dateString,
     dateFont: 'Inconsolata',
-    cloudName: 'djeivq7td',
     imagePublicID: 'card',
   });
