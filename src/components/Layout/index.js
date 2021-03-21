@@ -54,10 +54,9 @@ const Layout = ({ children, location }) => (
       if (location && location.pathname === rootPath) {
         header = (
           <h1>
-            <Link to={'/'}>
-              <AravindBalla />
+            <Link className="nav-item no-underline hover:no-underline" to={'/'}>
+              Aravind Balla
             </Link>
-            <span style={{ display: 'none' }}>{title}</span>
           </h1>
         );
       } else {
@@ -77,7 +76,7 @@ const Layout = ({ children, location }) => (
       return (
         <React.Fragment>
           <div className="mx-auto p-8 layout">
-            <div className="flex justify-between mb-8">
+            <div className="flex justify-between items-center mb-8">
               {header}
               <DarkModeToggle />
             </div>

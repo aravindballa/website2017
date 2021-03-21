@@ -7,6 +7,8 @@ import SEO from '../components/SEO';
 import getLCImage from '../utils/lcImage';
 import { getRandomTailwindGradient } from '../utils/getRandomTailwindGradient';
 
+import '../styles/avatar.css';
+
 const HomePage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const siteDescription = data.site.siteMetadata.description;
@@ -15,6 +17,15 @@ const HomePage = ({ data, location }) => {
     <>
       <Layout location={location} title={siteTitle} description={siteDescription}>
         <SEO />
+        <div className="flex justify-end mb-8 -mt-8">
+          <div className="box">
+            <div class="spin-container">
+              <div class="shape">
+                <div class="bd" style={{ backgroundImage: `url('/avatar.jpg')` }}></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <p>
           Hi 👋 I am Software Developer working remotely from Hyderabad, India. I love JS and CSS
           💛. I like to <Link to="/projects">build stuff</Link>, document the process and share the
@@ -47,7 +58,7 @@ const HomePage = ({ data, location }) => {
                   {node.frontmatter.banner ? (
                     <Img
                       className="rounded-md bg-cover h-32 -mb-4"
-                      sizes={node.frontmatter.banner.childImageSharp.fluid}
+                      fluid={node.frontmatter.banner.childImageSharp.fluid}
                     />
                   ) : (
                     <div

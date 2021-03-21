@@ -32,7 +32,7 @@ class WritingsIndex extends React.Component {
                   {node.frontmatter.banner ? (
                     <Img
                       className="rounded-md bg-cover h-64"
-                      sizes={node.frontmatter.banner.childImageSharp.fluid}
+                      fluid={node.frontmatter.banner.childImageSharp.fluid}
                     />
                   ) : (
                     <div

@@ -30,7 +30,7 @@ class BlogPostTemplate extends React.Component {
         )}
         <div className={`my-4 ${post.frontmatter.bannerFullWidth ? 'full-width' : ''}`}>
           {post.frontmatter.banner && (
-            <Img className="rounded-md" sizes={post.frontmatter.banner.childImageSharp.fluid} />
+            <Img className="rounded-md" fluid={post.frontmatter.banner.childImageSharp.fluid} />
           )}
           {post.frontmatter.bannercaption && (
             <div className="opacity-40 text-xs mt-1">
