@@ -1,5 +1,9 @@
 import React from 'react';
+import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 import { encode } from '../utils/helpers';
 
 const Subscribe = () => {
@@ -38,17 +42,13 @@ const Subscribe = () => {
       }}
     >
       <div className="mb-8 px-6 py-8 dark:bg-purple-900 bg-opacity-100 dark-bg-opacity-25 bg-purple-100 rounded-md">
-        <h3 className="m-0">Get letters from me 🙌</h3>
-        <p className="text-base mt-4">
-          I occasionally send letters to your email about things I'm currently learning,{' '}
-          <strong>articles</strong> I write, <strong>books</strong> I read, the{' '}
-          <strong>podcasts</strong> I record and places I <strong>travel</strong> to. I call it -{' '}
-          <i>Hackletter</i>. I'd love to share and discuss them with you!
-        </p>
+        <h3 className="m-0">Hop right in 🏄‍♀️</h3>
         {status === 'READY' && (
           <div className="flex mt-4 gap-y-2 md:gap-x-2 md:gap-y-0 flex-col md:flex-row">
             <input
               id="name"
+              autoFocus
+              autoComplete="name"
               name="name"
               type="text"
               className="px-3 py-1 dark:bg-purple-800 dark-bg-opacity-25 bg-purple-200 placeholder-purple-400 text-base rounded"
@@ -70,6 +70,7 @@ const Subscribe = () => {
               id="email"
               name="email"
               type="email"
+              autoComplete="email"
               className="px-3 py-1 dark:bg-purple-800 dark-bg-opacity-25 bg-purple-200 placeholder-purple-400 text-base rounded flex-1"
               placeholder="yourname@example.com"
               value={email}
@@ -84,7 +85,9 @@ const Subscribe = () => {
           </div>
         )}
         {status === `SUBMITTING` ? <p className="m-0 text-center w-full">Submitting 🙇‍♂️</p> : null}
-        {status === `DONE` ? <p className="m-0 text-center w-full">Thanks 🎉</p> : null}
+        {status === `DONE` ? (
+          <p className="m-0 text-center w-full">You're in. Looking for the next Tuesday 🎉</p>
+        ) : null}
         {status === `ERROR` ? (
           <p className="m-0 text-center w-full text-sm">
             Something went wrong. Could you refresh page and retry? 🙊
@@ -95,4 +98,25 @@ const Subscribe = () => {
   );
 };
 
-export default Subscribe;
+const HomePage = ({ location }) => {
+  return (
+    <>
+      <Layout location={location}>
+        <SEO />
+        <img src="/hl-header.jpg" className="rounded-md my-8 max-w-full" alt="Hackletter" />
+        <p>
+          I send out a weekly letter, <i>on every Tuesday</i>, which gives you a behind-the-scenes
+          look into what I'm working on, solutions and hacks that I'm building, podcast episodes I
+          record and interesting reads I find.
+        </p>
+        <Subscribe />
+        <h2>Archive</h2>
+        <p className="text-gray-400 dark:text-gray-700 text-sm">
+          This will get populated as I send letters. First letter is scheduled this Tuesday. ✨
+        </p>
+      </Layout>
+    </>
+  );
+};
+
+export default HomePage;
