@@ -102,7 +102,10 @@ const HomePage = ({ location }) => {
   return (
     <>
       <Layout location={location}>
-        <SEO />
+        <SEO
+          frontmatter={{ title: 'Hackletter', description: 'A weekly newsletter by Aravind Balla' }}
+          postImage="/hl-header.jpg"
+        />
         <img src="/hl-header.jpg" className="rounded-md my-8 max-w-full" alt="Hackletter" />
         <p>
           I send out a weekly letter, <i>on every Tuesday</i>, which gives you a behind-the-scenes
