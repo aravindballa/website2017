@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import { encode } from '../utils/helpers';
 
@@ -40,10 +41,16 @@ const Subscribe = () => {
       <div className="mb-8 px-6 py-8 dark:bg-purple-900 bg-opacity-100 dark-bg-opacity-25 bg-purple-100 rounded-md">
         <h3 className="m-0">Get letters from me 🙌</h3>
         <p className="text-base mt-4">
-          I occasionally send letters to your email about things I'm currently learning,{' '}
+          I send letters weekly to your email about things I'm currently learning,{' '}
           <strong>articles</strong> I write, <strong>books</strong> I read, the{' '}
           <strong>podcasts</strong> I record and places I <strong>travel</strong> to. I call it -{' '}
-          <i>Hackletter</i>. I'd love to share and discuss them with you!
+          <Link to="/hackletter">
+            <i>Hackletter</i>
+          </Link>
+          . I'd love to share and discuss them with you!
+        </p>
+        <p className="text-sm">
+          <Link to="/hackletter">Read the archive 📬</Link>
         </p>
         {status === 'READY' && (
           <div className="flex mt-4 gap-y-2 md:gap-x-2 md:gap-y-0 flex-col md:flex-row">
