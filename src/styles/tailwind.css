@@ -80,6 +80,10 @@ li {
   @apply list-outside list-disc;
 }
 
+hr {
+  @apply h-0.5 bg-gray-500 mt-4 mb-8;
+}
+
 .gatsby-resp-image-background-image,
 .gatsby-resp-image-image {
   @apply rounded-md;

@@ -31,6 +31,12 @@ const renderBreadcrumb = (pathname) => {
         talks
       </Link>
     );
+  } else if (pathname.match(/hackletter/)) {
+    return (
+      <Link className="nav-item" to={'/hackletter'}>
+        hackletter
+      </Link>
+    );
   } else {
     return '';
   }

@@ -98,7 +98,8 @@ const Subscribe = () => {
   );
 };
 
-const HomePage = ({ location }) => {
+const HackletterPage = ({ data, location }) => {
+  const letters = data.allMdx.edges;
   return (
     <>
       <Layout location={location}>
@@ -114,12 +115,44 @@ const HomePage = ({ location }) => {
         </p>
         <Subscribe />
         <h2>Archive</h2>
-        <p className="text-gray-400 dark:text-gray-700 text-sm">
-          This will get populated as I send letters. First letter is scheduled this Tuesday. ✨
-        </p>
+        {letters.map(({ node }) => (
+          <p>
+            <Link className="hover:no-underline flex items-baseline" to={node.fields.slug}>
+              <span className="text-sm text-gray-500 mr-4">
+                #{node.fields.slug.replace(/\/hackletter\/(.*?)\/$/, '$1')}
+              </span>
+              <span>
+                <span>{node.frontmatter.title}</span> <span className="opacity-50">|</span>{' '}
+                <span className="text-sm">{node.frontmatter.date}</span>
+              </span>
+            </Link>
+          </p>
+        ))}
       </Layout>
     </>
   );
 };
 
-export default HomePage;
+export default HackletterPage;
+
+export const pageQuery = graphql`
+  query {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { ne: false }, type: { eq: "letter" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          excerpt
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+          }
+        }
+      }
+    }
+  }
+`;

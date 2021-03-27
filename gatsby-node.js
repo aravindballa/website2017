@@ -53,9 +53,17 @@ exports.createPages = async ({ graphql, actions }) => {
       next = null;
     }
 
+    const templateForType = {
+      letter: path.resolve(`./src/templates/hackletter.js`),
+      article: path.resolve(`./src/templates/blog-post.js`),
+      talk: path.resolve(`./src/templates/blog-post.js`),
+    };
+
     createPage({
       path: post.node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.js`),
+      component: post.node.frontmatter.type
+        ? templateForType[post.node.frontmatter.type]
+        : path.resolve(`./src/templates/blog-post.js`),
       context: {
         slug: post.node.fields.slug,
         previous,
