@@ -72,12 +72,17 @@ strong {
   @apply font-bold;
 }
 
-ul {
+ul,
+ol {
   @apply pl-6;
 }
 
-li {
+ul > li {
   @apply list-outside list-disc;
+}
+
+ol > li {
+  @apply list-outside list-decimal;
 }
 
 hr {

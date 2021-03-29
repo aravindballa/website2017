@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 exports.handler = async function (event, context) {
   const body = JSON.parse(event.body);
 
-  const { name, last_name, email, data } = body.payload;
+  const { name, last_name, email, data, tags = 'hackletter,website' } = body.payload;
 
   if (last_name) {
     return {
@@ -21,7 +21,7 @@ exports.handler = async function (event, context) {
       firstName: name,
       email,
       subscribed: true,
-      tags: ['website'],
+      tags: [tags],
       overrideExisting: true,
       meta: {
         referrer: data.referrer,
@@ -30,7 +30,10 @@ exports.handler = async function (event, context) {
   });
 
   if (response.status === 201) {
-    const message = `New subscriber 💌: ${name} added to mailing list.`;
+    let message = `New subscriber 💌: ${name} added to mailing list.`;
+    if (tags.includes('next-notion')) {
+      message = `😬 ${name} just subscribed to NextJS Notion course.`;
+    }
     try {
       await fetch(
         `https://api.telegram.org/bot${
