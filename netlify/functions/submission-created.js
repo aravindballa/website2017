@@ -22,7 +22,6 @@ exports.handler = async function (event, context) {
       email,
       subscribed: true,
       tags: tags.split(',').map((tag) => tag.trim()),
-      overrideExisting: true,
       meta: {
         referrer: data.referrer,
       },
