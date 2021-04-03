@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -125,10 +124,11 @@ const NextNotionPage = ({ location }) => {
           postImage="/next-notion-header.jpg"
         />
         <h1>Build a blog using Next JS and Notion as your CMS</h1>
-        <img
-          src="/next-notion-header.jpg"
+        <StaticImage
+          src="../assets/next-notion-header.jpg"
           className="rounded-md my-8 max-w-full"
           alt="NextJS Notion course header"
+          placeholder="tracedSVG"
         />
 
         <p>

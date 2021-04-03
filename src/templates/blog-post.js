@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Bio from '../components/Bio';
 import SEO from '../components/SEO';
@@ -29,8 +29,13 @@ class BlogPostTemplate extends React.Component {
           </div>
         )}
         <div className={`my-4 ${post.frontmatter.bannerFullWidth ? 'full-width' : ''}`}>
+          {/* <Img className="rounded-md" fluid={post.frontmatter.banner.childImageSharp.fluid} /> */}
           {post.frontmatter.banner && (
-            <Img className="rounded-md" fluid={post.frontmatter.banner.childImageSharp.fluid} />
+            <GatsbyImage
+              className="rounded-md"
+              image={post.frontmatter.banner.childImageSharp.gatsbyImageData}
+              alt="banner-image"
+            />
           )}
           {post.frontmatter.bannercaption && (
             <div className="opacity-40 text-xs mt-1">
@@ -93,9 +98,7 @@ export const pageQuery = graphql`
         technologies
         banner {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
+            gatsbyImageData
           }
         }
         bannercaption

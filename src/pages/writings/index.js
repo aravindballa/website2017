@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/SEO';
@@ -30,9 +30,10 @@ class WritingsIndex extends React.Component {
               <div className="mt-4" key={node.fields.slug}>
                 <Link to={node.fields.slug}>
                   {node.frontmatter.banner ? (
-                    <Img
-                      className="rounded-md bg-cover h-64"
-                      fluid={node.frontmatter.banner.childImageSharp.fluid}
+                    <GatsbyImage
+                      className="bg-cover h-64 rounded-md"
+                      image={node.frontmatter.banner.childImageSharp.gatsbyImageData}
+                      alt={`Banner image for ${title}`}
                     />
                   ) : (
                     <div
@@ -76,9 +77,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             banner {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData
               }
             }
           }

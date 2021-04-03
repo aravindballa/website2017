@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -107,7 +107,12 @@ const HackletterPage = ({ data, location }) => {
           frontmatter={{ title: 'Hackletter', description: 'A weekly newsletter by Aravind Balla' }}
           postImage="/hl-header.jpg"
         />
-        <img src="/hl-header.jpg" className="rounded-md my-8 max-w-full" alt="Hackletter" />
+        <StaticImage
+          src="../assets/hl-header.jpg"
+          className="rounded-md my-8 max-w-full"
+          alt="Hackletter"
+          placeholder="tracedSVG"
+        />
         <p>
           I send out a weekly letter, <i>on every Tuesday</i>, which gives you a behind-the-scenes
           look into what I'm working on, solutions and hacks that I'm building, podcast episodes I
@@ -116,7 +121,7 @@ const HackletterPage = ({ data, location }) => {
         <Subscribe />
         <h2>Archive</h2>
         {letters.map(({ node }) => (
-          <p>
+          <p key={node.fields.slug}>
             <Link className="hover:no-underline flex items-baseline" to={node.fields.slug}>
               <span className="text-sm text-gray-500 mr-4">
                 #{node.fields.slug.replace(/\/hackletter\/(.*?)\/$/, '$1')}

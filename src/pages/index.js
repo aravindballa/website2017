@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
@@ -56,9 +56,10 @@ const HomePage = ({ data, location }) => {
               >
                 <Link to={node.fields.slug}>
                   {node.frontmatter.banner ? (
-                    <Img
+                    <GatsbyImage
                       className="rounded-md bg-cover h-32 -mb-4"
-                      fluid={node.frontmatter.banner.childImageSharp.fluid}
+                      image={node.frontmatter.banner.childImageSharp.gatsbyImageData}
+                      alt={`Banner image for ${title}`}
                     />
                   ) : (
                     <div
@@ -87,19 +88,27 @@ const HomePage = ({ data, location }) => {
           we love about. It's called <a href="https://learningcurve.dev">Learning Curve Podcast</a>
         </p>
         {data.allAnchorEpisode.edges.map(({ node }) => (
-          <div>
-            <a href={`https://learningcurve.dev/${node.itunes.episode}`}>
+          <div className="mb-4">
+            <a
+              className="flex flex-col md:flex-row"
+              href={`https://learningcurve.dev/${node.itunes.episode}`}
+            >
               <img
-                className="w-72 rounded mb-0"
+                className="w-72 rounded mb-0 mr-4 h-auto"
+                alt={`Episode cover of ${node.title}`}
                 src={getLCImage(
                   node.itunes.episode,
                   node.title,
                   node.pubDate,
                   node.itunes.duration
                 )}
+                width={288}
+                height={151}
               />
-              <span className="text-sm">Latest - </span>
-              {node.title}
+              <div>
+                <span className="text-sm">Latest - </span>
+                {node.title}
+              </div>
             </a>
           </div>
         ))}
@@ -180,9 +189,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             banner {
               childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
-                }
+                gatsbyImageData
               }
             }
           }
